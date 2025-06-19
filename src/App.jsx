@@ -5,6 +5,7 @@ import Home from "./Pages/Home";
 import ViewAdvert from "./Pages/ViewAdvert";
 import PostAdvert from "./pages/PostAdvert";
 import VendorDashboard from "./Pages/VendorDashboard"
+import VendorDasboard from "./Pages/VendorDashboard";
 import NotFound from "./Pages/NotFound";
 import Footer from "./Components/Footer";
 
