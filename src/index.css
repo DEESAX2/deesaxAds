@@ -1,1 +1,13 @@
 @import "tailwindcss";
+
+
+@theme{
+    /* colors */
+
+   --color-nav:#d0f2f6;
+   --color-special:#bbb6b5;
+   --color-button1:#38cca0;
+   --color-button2:#12170c;
+   --color-button3:#865b3d;
+}
+
