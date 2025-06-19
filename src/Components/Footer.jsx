@@ -2,9 +2,10 @@ import React from 'react';
 import { Link } from 'react-router';
 import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn, FaWhatsapp } from 'react-icons/fa';
 
+
 export default function Footer() {
   return (
-    <footer className="bg-gray-800 text-white py-8">
+    <footer className="bg-[#1E2939] text-white py-8">
       <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-5 gap-8">
         {/* About Section */}
         <div>
