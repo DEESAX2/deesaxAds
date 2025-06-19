@@ -81,7 +81,7 @@ setCurrentView('login');
 if (currentView === 'login') {
 return (
   
-<div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
+<div className="min-h-screen bg-blue-500 flex items-center justify-center p-4">
 <div className="max-w-md w-full bg-white rounded-2xl shadow-xl p-8">
 <div className="text-center mb-8">
 <h1 className="text-4xl font-bold text-gray-800 mb-2">Login</h1>
@@ -136,11 +136,7 @@ return (
         </button>
       </div>
 
-      <div className="flex items-center justify-between mt-6">
-        <button className="text-blue-600 hover:text-blue-700 font-medium transition-colors">
-          Forgot password?
-        </button>
-      </div>
+      
 
       <div className="text-center mt-8 pt-6 border-t border-gray-200">
         <span className="text-gray-600">Don't have an account? </span>
@@ -162,7 +158,7 @@ return (
 <div className="min-h-screen bg-gradient-to-br from-bl-600 via-blue-700 to-blue-800 flex items-center justify-center p-4">
 <div className="max-w-md w-full bg-white rounded-2xl shadow-2xl p-6">
 <div className="text-center mb-6">
-<h1 className="text-3xl font-bold text-white mb-4 -mt-2 bg-gradient-to-r from-blue-600 to-blue-700 py-4 -mx-6 rounded-t-2xl">
+<h1 className="text-3xl font-bold text-white mb-4 -mt-8 bg-gradient-to-r from-blue-600 to-blue-700 py-4 -mx-6 rounded-t-2xl">
 Register for free
 </h1>
 <p className="text-gray-600 text-sm px-2 mt-4">
