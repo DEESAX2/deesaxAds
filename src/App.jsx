@@ -8,6 +8,8 @@ import VendorDashboard from "./Pages/VendorDashboard"
 import VendorDasboard from "./Pages/VendorDashboard";
 import NotFound from "./Pages/NotFound";
 import Footer from "./Components/Footer";
+import { ToastContainer } from "react-toastify";
+import"react-toastify/dist/ReactToastify.css";
 
 const deesaxConnectRouter = createBrowserRouter([
   { path: '/', element: <Home /> },
@@ -23,6 +25,10 @@ function App() {
   return (
     <>
       <RouterProvider router={deesaxConnectRouter} />
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+      />
     </>
   )
 }
