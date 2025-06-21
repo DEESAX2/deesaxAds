@@ -9,6 +9,10 @@ import designer from "../assets/Images/designer.jpg";
 import stylist from "../assets/Images/stylist.jpg";
 import photo1 from "../assets/Images/photo1.jpg";
 import trainer from "../assets/Images/trainer.jpg";
+import AdvertList from "../Components/AdvertList";
+import HowItWorks from "../Components/HowItWorks";
+import AdvertSearchFilter from "../Components/AdvertSearchFilter";
+
 
 export default function Home() {
   const [showImage, setShowImage] = useState(true);
@@ -31,6 +35,7 @@ export default function Home() {
     }, 4000); // Change every 4 seconds
     return () => clearInterval(interval);
   }, [painterImages.length]);
+
 
   return (
     <>
@@ -57,19 +62,21 @@ export default function Home() {
         </div>
       </section>
 
-      <section>
+      <section className="bg-gradient-to-r from-white to-new">
         <div className="flex flex-col md:flex-row">
           <div className="flex-1 p-4 md:p-8">
             <h1 className="text-2xl md:text-4xl font-bold text-gray-800 mb-4">
               Welcome to Deesax  Connect
             </h1>
-            <p className="text-gray-600 mb-6">
+            <p className="text-gray-600 mb-6 font-bold">
               Your one-stop platform for connecting with skilled professionals across various fields.
             </p>
             <p>DeesaxConnect is a one-stop platform where people can post their services and find trusted professionals across various fields. Whether you're offering a skill or looking for one, we make it easy to connect, collaborate, and get things done. From creatives to consultants, artisans to tech experts — DeesaxConnect is where services meet opportunity.</p>
             <button className="mt-6 bg-gradient-to-r from-button2 to-button3 text-white font-semibold py-2 px-4 rounded-full shadow-lg hover:from-special hover:to-button1 transition duration-300 ease-in-out">
               Get Started
             </button>
+
+            <AdvertSearchFilter />
           </div>
           <div className="flex-1 p-4 md:p-8">
             <img
@@ -80,6 +87,18 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <section className="bg-white">
+          <div  className="flex flex-col items-center justify-center text-center p-8 bg-gray-100">
+        <h2> Browse Through Our List of Services Available and Make Your Pick </h2>
+        </div>
+          <AdvertList />
+      </section>
+
+<section className="bg-button1">
+   <HowItWorks />
+</section>
+
 
       <Footer />
     </>
