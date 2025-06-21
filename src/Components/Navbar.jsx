@@ -32,8 +32,8 @@ export default function Navbar() {
                         <option value="de">{t('German')}</option>
                         <option value="zh">{t('Chinese')}</option>
                     </select>
-                    <Link to="/login" className="text-button3 hover:underline">{t('Login')}</Link>
-                    <Link to="/register" className="bg-button3 text-white py-1 px-3 rounded-full hover:bg-button2 transition">{t('Register')}</Link>
+                    <Link to="/login" className="bg-gradient-to-r from-button2 to-button3 text-white font-semibold py-2 px-4 md:py-2.5 md:px-7 rounded-full shadow-lg hover:from-special hover:to-button1 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-opacity-75 transition duration-300 ease-in-out w-full md:w-auto ">{t('Login')}</Link>
+                    <Link to="/login" className="bg-gradient-to-r from-button3 to-button2 text-white font-semibold py-2 px-4 md:py-2.5 md:px-7 rounded-full shadow-lg hover:from-special hover:to-button1 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-75 transition duration-300 ease-in-out w-full md:w-auto">{t('Register')}</Link>
                 </div>
             </div>
 
