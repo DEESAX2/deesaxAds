@@ -12,7 +12,7 @@ export default function VendorSideBar() {
                     <Link to="/vendor-dashboard" className="flex items-center gap-3 text-gray-700 font-semibold hover:bg-sky-100 px-4 py-2 rounded-lg transition hover:text-blue-600">
             Dashboard
           </Link> 
-                    <a href="/vendor/profile" className="flex items-center gap-3 text-gray-700 font-semibold hover:bg-sky-100 px-4 py-2 rounded-lg transition hover:text-blue-600">
+                    <a href="/vendor-profile" className="flex items-center gap-3 text-gray-700 font-semibold hover:bg-sky-100 px-4 py-2 rounded-lg transition hover:text-blue-600">
                         Profile
                     </a>
                     <Link to="/advert-form" className="flex items-center gap-3 text-gray-700 font-semibold hover:bg-sky-100 px-4 py-2 rounded-lg transition hover:text-blue-600">
@@ -21,7 +21,7 @@ export default function VendorSideBar() {
                     <Link to="/vendor-advert-list" className="flex items-center gap-3 text-gray-700 font-semibold hover:bg-sky-100 px-4 py-2 rounded-lg transition hover:text-blue-600">
                         My Adverts
                     </Link>
-                    <Link to="/vendor/settings" className="flex items-center gap-3 text-gray-700 font-semibold hover:bg-sky-100 px-4 py-2 rounded-lg transition hover:text-blue-600">
+                    <Link to="/vendor-settings" className="flex items-center gap-3 text-gray-700 font-semibold hover:bg-sky-100 px-4 py-2 rounded-lg transition hover:text-blue-600">
                         Settings
                     </Link>
                     <a href="/logout" className="flex items-center gap-3 text-red-600  hover:text-red-800">

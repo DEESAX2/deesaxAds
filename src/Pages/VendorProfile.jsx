@@ -54,7 +54,7 @@ export default function VendorProfile() {
                     <div className="mt-6">
                         <h4 className="text-lg font-semibold text-gray-700 mb-2">Actions</h4>
                         <div className="flex space-x-4">
-                            <Link to="/vendor/settings" className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+                            <Link to="/vendor-settings" className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
                                 Edit Profile
                             </Link>
                             <Link to="/vendor-advert-list" className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">

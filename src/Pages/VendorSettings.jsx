@@ -37,7 +37,7 @@ export default function VendorSettings() {
                         </section>
 
                         {/* Profile Info */}
-                        <form method="POST" action="/vendor/settings/update" className="space-y-10">
+                        <form method="POST" action="/vendor-settings/update" className="space-y-10">
                             <div>
                                 <h2 className="text-lg font-semibold mb-3">Profile Information</h2>
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -118,7 +118,7 @@ export default function VendorSettings() {
                         {/* Account Delete Section */}
                         <section className="text-red-600">
                             <h2 className="text-lg font-semibold mb-4">Danger Zone</h2>
-                            <form method="POST" action="/vendor/settings/delete-account">
+                            <form method="POST" action="/vendor-settings/delete-account">
                                 <p className="mb-4">
                                     Once your account is deleted, all your data will be permanently removed. This action cannot be undone.
                                 </p>
