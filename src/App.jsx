@@ -1,14 +1,13 @@
 import { createBrowserRouter, RouterProvider } from "react-router";
 import Register from "./Pages/Register";
-import Login from "./pages/Login";
+import Login from "./Pages/Login";
 import Home from "./Pages/Home";
 import ViewAdvert from "./Pages/ViewAdvert";
-import PostAdvert from "./pages/PostAdvert";
+import PostAdvert from "./Pages/PostAdvert";
 import VendorDashboard from "./Pages/VendorDashboard"
-import VendorDasboard from "./Pages/VendorDashboard";
 import NotFound from "./Pages/NotFound";
-import Footer from "./Components/Footer";
 import AdvertList from "./Components/AdvertList";
+import { ToastContainer } from "react-toastify";
 
 const deesaxConnectRouter = createBrowserRouter([
   { path: '/', element: <Home /> },
@@ -17,7 +16,7 @@ const deesaxConnectRouter = createBrowserRouter([
   { path: '/view-advert', element: <ViewAdvert /> },
   { path: '/post-advert', element: <PostAdvert /> },
   { path: '/vendor-dashboard', element: <VendorDashboard /> },
-  { path: '/*', element: <NotFound /> },
+  { path: '*', element: <NotFound /> },
   { path: '/advert-list', element: <AdvertList />},
 ]);
 
