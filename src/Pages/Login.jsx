@@ -136,7 +136,7 @@ const LoginRegisterApp = () => {
       <div className="max-w-md w-full bg-white rounded-2xl shadow-2xl p-6">
         <div className="text-center mb-6">
           <h1 className="text-3xl font-bold text-white mb-4 -mt-8 bg-gradient-to-r from-blue-600 to-blue-700 py-4 -mx-6 rounded-t-2xl">{t('Register for free')}</h1>
-          <p className="text-gray-600 text-sm px-2 mt-4"> {t('Are you a Vendor or a User?')}</p>
+          <p className="text-gray-600 text-sm px-2 mt-4"> {t('Are you a Vendor or an Employer?')}</p>
         </div>
 
         <div className="flex mb-6 bg-gray-50 rounded-lg p-1">
@@ -145,7 +145,7 @@ const LoginRegisterApp = () => {
               : "text-gray-600 hover:text-gray-800" }`}> {t('Vendor')}
           </button>
           <button
-            onClick={() => setUserType("user")} className={`flex-1 flex items-center justify-center py-3 px-4 rounded-md transition-all ${ userType === "user" ? "bg-white shadow-sm text-blue-700 font-medium"  : "text-gray-600 hover:text-gray-800" }`}>{t('User')}
+            onClick={() => setUserType("user")} className={`flex-1 flex items-center justify-center py-3 px-4 rounded-md transition-all ${ userType === "user" ? "bg-white shadow-sm text-blue-700 font-medium"  : "text-gray-600 hover:text-gray-800" }`}>{t('Employer')}
           </button>
         </div>
 
