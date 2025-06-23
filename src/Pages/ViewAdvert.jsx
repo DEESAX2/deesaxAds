@@ -1,6 +1,7 @@
 import React from "react";
 import craftsmanVintagelogo from "../assets/images/craftsmanVintagelogo.jpg";
 
+
 export default function ViewAdvert() {
   return (
     <div className="min-h-screen bg-gray-100">
@@ -51,7 +52,7 @@ export default function ViewAdvert() {
         </div>
 
         <div className="flex flex-col justify-center items-center mt-10 sm:mt-12">
-          <h1 className="text-2xl sm:text-3xl text-gray-800 text-center">
+          <h1 className="text-2xl sm:text-3xl text-gray-800 text-center mt-20">
             Help Support Our Work By Rating Us
           </h1>
           <h2 className="text-xl sm:text-2xl font-bold text-pink-700 m-4 sm:m-5">
@@ -64,7 +65,14 @@ export default function ViewAdvert() {
             id="rating-input"
             placeholder="Enter your feedback"
           />
-          <p className="text-sm sm:text-base mt-2">Rating</p>
+          <p className="text-xl sm:text-2xl font-bold text-pink-700 m-4 sm:m-5">Rating</p>
+           <input
+          className="bg-pink-300 border-2 border-pink-500 rounded-md p-2 w-full max-w-md"
+            type="text"
+            name="name"
+            id="rating-input"
+            placeholder="Enter your feedback"
+          />
         </div>
       </div>
     </div>

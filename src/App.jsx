@@ -8,6 +8,7 @@ import VendorDashboard from "./Pages/VendorDashboard"
 import VendorDasboard from "./Pages/VendorDashboard";
 import NotFound from "./Pages/NotFound";
 import Footer from "./Components/Footer";
+import AdvertList from "./Components/AdvertList";
 
 const deesaxConnectRouter = createBrowserRouter([
   { path: '/', element: <Home /> },
@@ -17,6 +18,7 @@ const deesaxConnectRouter = createBrowserRouter([
   { path: '/post-advert', element: <PostAdvert /> },
   { path: '/vendor-dashboard', element: <VendorDashboard /> },
   { path: '/*', element: <NotFound /> },
+  { path: '/advert-list', element: <AdvertList />},
 ]);
 
 function App() {
