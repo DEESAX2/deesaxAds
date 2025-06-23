@@ -4,7 +4,7 @@ import herobg from "../assets/Images/herobg.png";
 import videodeesax from "../assets/Videos/videodeesax.mp4";
 import Footer from "../Components/Footer";
 import painter from "../assets/Images/painter.jpg";
-import cook from "../assets/Images/cook.jpg"; // Add more images as needed
+import cook from "../assets/Images/cook.jpg"; 
 import designer from "../assets/Images/designer.jpg";
 import stylist from "../assets/Images/stylist.jpg";
 import photo1 from "../assets/Images/photo1.jpg";
