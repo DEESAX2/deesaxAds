@@ -1,56 +1,58 @@
 import React from 'react';
 import { Link } from 'react-router';
 import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn, FaWhatsapp } from 'react-icons/fa';
-
+import { useTranslation } from 'react-i18next';
 
 export default function Footer() {
+  const { t } = useTranslation();
+
   return (
     <footer className="bg-[#1E2939] text-white py-8">
       <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-5 gap-8">
         {/* About Section */}
         <div>
-          <h4 className="font-bold mb-4">About</h4>
+          <h4 className="font-bold mb-4">{t('About')}</h4>
           <ul>
-            <li className="mb-2"><Link to="/notfound" className="hover:underline">Our Story</Link></li>
-            <li className="mb-2"><Link to="/notfound" className="hover:underline">Contact Us</Link></li>
-            <li className="mb-2"><Link to="/notfound" className="hover:underline">Terms & Conditions</Link></li>
+            <li className="mb-2"><Link to="/notfound" className="hover:underline">{t('Our Story')}</Link></li>
+            <li className="mb-2"><Link to="/notfound" className="hover:underline">{t('Contact Us')}</Link></li>
+            <li className="mb-2"><Link to="/notfound" className="hover:underline">{t('Terms & Conditions')}</Link></li>
           </ul>
         </div>
 
         {/* Services Section */}
         <div>
-          <h4 className="font-bold mb-4">Services</h4>
+          <h4 className="font-bold mb-4">{t('Services')}</h4>
           <ul>
-            <li className="mb-2"><Link to="/notfound" className="hover:underline">Advert Posting</Link></li>
-            <li className="mb-2"><Link to="/notfound" className="hover:underline">Product Listings</Link></li>
-            <li className="mb-2"><Link to="/notfound" className="hover:underline">Customer Support</Link></li>
+            <li className="mb-2"><Link to="/notfound" className="hover:underline">{t('Advert Posting')}</Link></li>
+            <li className="mb-2"><Link to="/notfound" className="hover:underline">{t('Product Listings')}</Link></li>
+            <li className="mb-2"><Link to="/notfound" className="hover:underline">{t('Customer Support')}</Link></li>
           </ul>
         </div>
 
         {/* Products Section */}
         <div>
-          <h4 className="font-bold mb-4">Products</h4>
+          <h4 className="font-bold mb-4">{t('Products')}</h4>
           <ul>
-            <li className="mb-2"><Link to="/notfound" className="hover:underline">Fashion</Link></li>
-            <li className="mb-2"><Link to="/notfound" className="hover:underline">Tech Gadgets</Link></li>
-            <li className="mb-2"><Link to="/notfound" className="hover:underline">Food Items</Link></li>
+            <li className="mb-2"><Link to="/notfound" className="hover:underline">{t('Fashion')}</Link></li>
+            <li className="mb-2"><Link to="/notfound" className="hover:underline">{t('Tech Gadgets')}</Link></li>
+            <li className="mb-2"><Link to="/notfound" className="hover:underline">{t('Food Items')}</Link></li>
           </ul>
         </div>
 
         {/* Support Section */}
         <div>
-          <h4 className="font-bold mb-4">Support</h4>
+          <h4 className="font-bold mb-4">{t('Support')}</h4>
           <ul>
-            <li className="mb-2"><Link to="/notfound" className="hover:underline">Help & Support</Link></li>
-            <li className="mb-2"><Link to="/notfound" className="hover:underline">FAQ DeexasAd</Link></li>
-            <li className="mb-2"><Link to="/notfound" className="hover:underline">Contact Us</Link></li>
-            <li className="mb-2"><Link to="/notfound" className="hover:underline">Privacy Policy</Link></li>
+            <li className="mb-2"><Link to="/notfound" className="hover:underline">{t('Help & Support')}</Link></li>
+            <li className="mb-2"><Link to="/notfound" className="hover:underline">{t('FAQ DeesaxAd')}</Link></li>
+            <li className="mb-2"><Link to="/notfound" className="hover:underline">{t('Contact Us')}</Link></li>
+            <li className="mb-2"><Link to="/notfound" className="hover:underline">{t('Privacy Policy')}</Link></li>
           </ul>
         </div>
 
         {/* Follow Us Section */}
         <div>
-          <h4 className="font-bold mb-4">Follow Us</h4>
+          <h4 className="font-bold mb-4">{t('Follow Us')}</h4>
           <div className="flex space-x-4 text-2xl">
             <a href="https://www.facebook.com/esther-manor" className="hover:text-blue-400"><FaFacebookF /></a>
             <a href="https://www.instagram.com/i_am_duchess6?igsh=a3U5ZHRrM2s1ZnNx&utm_source=qr" className="hover:text-pink-400"><FaInstagram /></a>
@@ -59,23 +61,23 @@ export default function Footer() {
             <a href="https://wa.me/0548311401" className="hover:text-green-500"><FaWhatsapp /></a>
           </div>
 
-           <h4 className="font-bold  px-1 mt-10">Subscribe to our email</h4>
-            <div className="flex">
-              <input
-                type="email"
-                placeholder='Enter your email'
-                className='border px-3 py-2 rounded-l text-white outline-none'
-              />
-              <button className='bg-blue-500 text-black px-2 py-2  rounded-r hover:bg-blue-600'>
-                Send
-              </button>
-            </div>
+          <h4 className="font-bold  px-1 mt-10">{t('Subscribe to our email')}</h4>
+          <div className="flex">
+            <input
+              type="email"
+              placeholder={t('Enter your email')}
+              className='border px-3 py-2 rounded-l text-white outline-none'
+            />
+            <button className='bg-blue-500 text-black px-2 py-2  rounded-r hover:bg-blue-600'>
+              {t('Send')}
+            </button>
+          </div>
         </div>
       </div>
 
       {/* Footer Bottom */}
       <div className="text-center mt-8 text-sm text-gray-400">
-        © {new Date().getFullYear()} DeesaxConnect. All rights reserved.
+        © {new Date().getFullYear()} DeesaxConnect. {t('All rights reserved')}.
       </div>
     </footer>
   );
