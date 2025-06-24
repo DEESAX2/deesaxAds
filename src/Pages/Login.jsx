@@ -3,6 +3,16 @@ import { Eye, EyeOff } from "lucide-react";
 import { toast } from "react-toastify";
 import { useTranslation } from "react-i18next";
 import "react-toastify/dist/ReactToastify.css";
+import { apiClient } from "../api/client";
+import { useNavigate } from "react-router";
+
+
+// const navigate =useNavigate();
+// const LoginRegister = async (data)=> {
+//   try {
+//     const 
+//   }
+// }
 
 const LoginRegisterApp = () => {
   const { t } = useTranslation();
@@ -148,7 +158,7 @@ const LoginRegisterApp = () => {
       <div className="max-w-md w-full bg-white rounded-2xl shadow-2xl p-6">
         <div className="text-center mb-6">
           <h1 className="text-3xl font-bold text-white mb-4 -mt-8 bg-gradient-to-r from-blue-600 to-blue-700 py-4 -mx-6 rounded-t-2xl">{t('Register for free')}</h1>
-          <p className="text-gray-600 text-sm px-2 mt-4">{t('Are you a Vendor or an Employer?')}</p>
+          <p className="text-gray-600 text-sm px-2 mt-4">{t('Are you a Vendor or a Customer?')}</p>
         </div>
 
         <div className="flex mb-6 bg-gray-50 rounded-lg p-1">
@@ -157,14 +167,30 @@ const LoginRegisterApp = () => {
               : "text-gray-600 hover:text-gray-800"}`}>{t('Vendor')}
           </button>
           <button
-            onClick={() => setUserType("user")} className={`flex-1 flex items-center justify-center py-3 px-4 rounded-md transition-all ${userType === "user" ? "bg-white shadow-sm text-blue-700 font-medium" : "text-gray-600 hover:text-gray-800"}`}>{t('Employer')}
+            onClick={() => setUserType("user")} className={`flex-1 flex items-center justify-center py-3 px-4 rounded-md transition-all ${userType === "user" ? "bg-white shadow-sm text-blue-700 font-medium" : "text-gray-600 hover:text-gray-800"}`}>{t('Customer')}
           </button>
         </div>
 
         <div className="space-y-4">
+           <div>
+            <label htmlFor="registerFirstName" className="block text-sm font-medium text-blue-700 mb-1">{t('First Name')}<span className="text-red-500">*</span></label>
+            <input type="firstName" id="registerEmail" name="firstName"  value={formData.firstName} onChange={handleInputChange} className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all placeholder-gray-400" required />
+          </div>
+           <div>
+            <label htmlFor="registerLastName" className="block text-sm font-medium text-blue-700 mb-1">{t('Last Name ')}<span className="text-red-500">*</span></label>
+            <input type="lastName" id="registerlastName" name="lastName"  value={formData.lastName} onChange={handleInputChange} className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all placeholder-gray-400" required />
+          </div>
           <div>
             <label htmlFor="registerEmail" className="block text-sm font-medium text-blue-700 mb-1">{t('Email ')}<span className="text-red-500">*</span></label>
             <input type="email" id="registerEmail" name="email" placeholder="Email" value={formData.email} onChange={handleInputChange} className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all placeholder-gray-400" required />
+          </div>
+           <div>
+            <label htmlFor="registerPhone" className="block text-sm font-medium text-blue-700 mb-1">{t('Phone ')}<span className="text-red-500"></span></label>
+            <input type="phone" id="registerPhone" name="phone" placeholder="Phone Number" value={formData.phone} onChange={handleInputChange} className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all placeholder-gray-400" required />
+          </div>
+           <div>
+            <label htmlFor="registerAddress" className="block text-sm font-medium text-blue-700 mb-1">{t('Address ')}<span className="text-red-500"></span></label>
+            <input type="address" id="registerAddress" name="address" placeholder="Address" value={formData.address} onChange={handleInputChange} className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all placeholder-gray-400" required />
           </div>
 
           <div>

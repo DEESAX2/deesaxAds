@@ -14,18 +14,19 @@ export default function Footer() {
           <h4 className="font-bold mb-4">{t('About')}</h4>
           <ul>
             <li className="mb-2"><Link to="/notfound" className="hover:underline">{t('Our Story')}</Link></li>
-            <li className="mb-2"><Link to="/notfound" className="hover:underline">{t('Contact Us')}</Link></li>
+            {/* <li className="mb-2"><Link to="/notfound" className="hover:underline">{t('Contact Us')}</Link></li> */}
             <li className="mb-2"><Link to="/notfound" className="hover:underline">{t('Terms & Conditions')}</Link></li>
           </ul>
         </div>
 
-        {/* Services Section */}
+               {/* Support Section */}
         <div>
-          <h4 className="font-bold mb-4">{t('Services')}</h4>
+          <h4 className="font-bold mb-4">{t('Support')}</h4>
           <ul>
-            <li className="mb-2"><Link to="/notfound" className="hover:underline">{t('Advert Posting')}</Link></li>
-            <li className="mb-2"><Link to="/notfound" className="hover:underline">{t('Product Listings')}</Link></li>
-            <li className="mb-2"><Link to="/notfound" className="hover:underline">{t('Customer Support')}</Link></li>
+            <li className="mb-2"><Link to="/notfound" className="hover:underline">{t('Help & Support')}</Link></li>
+            <li className="mb-2"><Link to="/notfound" className="hover:underline">{t('FAQ DeesaxAd')}</Link></li>
+            {/* <li className="mb-2"><Link to="/notfound" className="hover:underline">{t('Contact Us')}</Link></li> */}
+            <li className="mb-2"><Link to="/notfound" className="hover:underline">{t('Privacy Policy')}</Link></li>
           </ul>
         </div>
 
@@ -39,16 +40,18 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Support Section */}
+ {/* Services Section */}
         <div>
-          <h4 className="font-bold mb-4">{t('Support')}</h4>
+          <h4 className="font-bold mb-4">{t('Address')}</h4>
           <ul>
-            <li className="mb-2"><Link to="/notfound" className="hover:underline">{t('Help & Support')}</Link></li>
-            <li className="mb-2"><Link to="/notfound" className="hover:underline">{t('FAQ DeesaxAd')}</Link></li>
-            <li className="mb-2"><Link to="/notfound" className="hover:underline">{t('Contact Us')}</Link></li>
-            <li className="mb-2"><Link to="/notfound" className="hover:underline">{t('Privacy Policy')}</Link></li>
+            <li className="mb-2"><Link to="/notfound" className="hover:underline">{t('DeexasConnect.')}</Link></li>
+            <li className="mb-2"><Link to="/notfound" className="hover:underline">{t('B.J Da Rocha loop,20.')}</Link></li>
+            <li className="mb-2"><Link to="/notfound" className="hover:underline">{t('Accra,Ghana')}</Link></li>
+            <li className="mb-2"><Link to="/notfound" className="hover:underline">{t('+233 545 725 331')}</Link></li>
+            <li className="mb-2"><Link to="/notfound" className="hover:underline">{t('Connect with us!')}</Link></li>
           </ul>
         </div>
+
 
         {/* Follow Us Section */}
         <div>
