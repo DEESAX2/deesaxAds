@@ -3,11 +3,9 @@ import { Eye, EyeOff } from "lucide-react";
 import { toast } from "react-toastify";
 import { useTranslation } from "react-i18next";
 import "react-toastify/dist/ReactToastify.css";
- 
-
 
 const LoginRegisterApp = () => {
-  const {t} =useTranslation();
+  const { t } = useTranslation();
   const [currentView, setCurrentView] = useState("login");
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
@@ -91,10 +89,23 @@ const LoginRegisterApp = () => {
     setCurrentView("login");
   };
 
+  const HomeArrow = () => (
+    <a href="/" className="absolute top-6 left-6 group home-arrow-slide-in">
+      <div className="flex items-center space-x-2 text-white hover:text-gray-200 cursor-pointer">
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+        </svg>
+        <span className="absolute left-12 opacity-0 group-hover:opacity-100  text-white text-xs rounded py-1 px-2 transition-opacity">{t('Go to Homepage')}
+        </span>
+      </div>
+    </a>
+  );
+
   if (currentView === "login") {
     return (
-      
-      <div className="min-h-screen bg-blue-500 flex items-center justify-center p-4">
+      <div className="min-h-screen bg-blue-500 flex items-center justify-center p-4 relative">
+        <HomeArrow />
+
         <div className="max-w-md w-full bg-white rounded-2xl shadow-xl p-8">
           <div className="text-center mb-8">
             <h1 className="text-4xl font-bold text-gray-800 mb-2">{t('Login')}</h1>
@@ -102,22 +113,22 @@ const LoginRegisterApp = () => {
 
           <div className="space-y-6">
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2"> {t('Email Address')}</label>
+              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">{t('Email Address')}</label>
               <input type="email" id="email" name="email" value={formData.email} onChange={handleInputChange}
-                className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all" required/>
+                className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all" required />
             </div>
 
             <div>
               <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-2">{t('Password')}</label>
               <div className="relative">
-                <input type={showPassword ? "text" : "password"} id="password" name="password" value={formData.password} onChange={handleInputChange} className="w-full px-4 py-3 pr-12 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all" required/>
+                <input type={showPassword ? "text" : "password"} id="password" name="password" value={formData.password} onChange={handleInputChange} className="w-full px-4 py-3 pr-12 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all" required />
                 <button type="button" onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-3 top-1/2 transform -translate-y-1/2 text-black-500 hover:text-gray-700 transition-colors" > {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+                  className="absolute right-3 top-1/2 transform -translate-y-1/2 text-black-500 hover:text-gray-700 transition-colors">{showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
                 </button>
               </div>
             </div>
 
-            <button onClick={handleLogin}  className="w-full bg-blue-600 text-white py-3 px-4 rounded-lg font-medium hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all transform hover:scale-[1.02] active:scale-[0.98]">{t('LOGIN')}
+            <button onClick={handleLogin} className="w-full bg-blue-600 text-white py-3 px-4 rounded-lg font-medium hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all transform hover:scale-[1.02] active:scale-[0.98]">{t('LOGIN')}
             </button>
           </div>
 
@@ -132,31 +143,32 @@ const LoginRegisterApp = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-bl-600 via-blue-700 to-blue-800 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-br from-bl-600 via-blue-700 to-blue-800 flex items-center justify-center p-4 relative"><HomeArrow />
+
       <div className="max-w-md w-full bg-white rounded-2xl shadow-2xl p-6">
         <div className="text-center mb-6">
           <h1 className="text-3xl font-bold text-white mb-4 -mt-8 bg-gradient-to-r from-blue-600 to-blue-700 py-4 -mx-6 rounded-t-2xl">{t('Register for free')}</h1>
-          <p className="text-gray-600 text-sm px-2 mt-4"> {t('Are you a Vendor or a User?')}</p>
+          <p className="text-gray-600 text-sm px-2 mt-4">{t('Are you a Vendor or an Employer?')}</p>
         </div>
 
         <div className="flex mb-6 bg-gray-50 rounded-lg p-1">
           <button
-            onClick={() => setUserType("vendor")} className={`flex-1 flex items-center justify-center py-3 px-4 rounded-md transition-all ${ userType === "vendor"? "bg-white shadow-sm text-blue-700 font-medium"
-              : "text-gray-600 hover:text-gray-800" }`}> {t('Vendor')}
+            onClick={() => setUserType("vendor")} className={`flex-1 flex items-center justify-center py-3 px-4 rounded-md transition-all ${userType === "vendor" ? "bg-white shadow-sm text-blue-700 font-medium"
+              : "text-gray-600 hover:text-gray-800"}`}>{t('Vendor')}
           </button>
           <button
-            onClick={() => setUserType("user")} className={`flex-1 flex items-center justify-center py-3 px-4 rounded-md transition-all ${ userType === "user" ? "bg-white shadow-sm text-blue-700 font-medium"  : "text-gray-600 hover:text-gray-800" }`}>{t('User')}
+            onClick={() => setUserType("user")} className={`flex-1 flex items-center justify-center py-3 px-4 rounded-md transition-all ${userType === "user" ? "bg-white shadow-sm text-blue-700 font-medium" : "text-gray-600 hover:text-gray-800"}`}>{t('Employer')}
           </button>
         </div>
 
         <div className="space-y-4">
           <div>
-            <label htmlFor="registerEmail" className="block text-sm font-medium text-blue-700 mb-1">{t('Email ')} <span className="text-red-500">*</span></label>
+            <label htmlFor="registerEmail" className="block text-sm font-medium text-blue-700 mb-1">{t('Email ')}<span className="text-red-500">*</span></label>
             <input type="email" id="registerEmail" name="email" placeholder="Email" value={formData.email} onChange={handleInputChange} className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all placeholder-gray-400" required />
           </div>
 
           <div>
-            <label htmlFor="registerPassword" className="block text-sm font-medium text-blue-700 mb-1"> {t('Password ')}<span className="text-red-500">*</span></label>
+            <label htmlFor="registerPassword" className="block text-sm font-medium text-blue-700 mb-1">{t('Password ')}<span className="text-red-500">*</span></label>
             <div className="relative">
               <input type={showPassword ? "text" : "password"} id="registerPassword" name="password" placeholder="Password" value={formData.password} onChange={handleInputChange} className="w-full px-4 py-3 pr-12 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all placeholder-gray-400" required />
               <button type="button" onClick={() => setShowPassword(!showPassword)} className="absolute right-3 top-1/2 transform -translate-y-1/2 text-black-600 hover:text-black-700 transition-colors">{showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
@@ -165,8 +177,7 @@ const LoginRegisterApp = () => {
           </div>
 
           <div>
-            <label htmlFor="confirmPassword" className="block text-sm font-medium text-blue-700 mb-1">
-              {t('Confirm Password ')} <span className="text-red-500">*</span></label>
+            <label htmlFor="confirmPassword" className="block text-sm font-medium text-blue-700 mb-1">{t('Confirm Password ')}<span className="text-red-500">*</span></label>
             <div className="relative">
               <input type={showConfirmPassword ? "text" : "password"} id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" value={formData.confirmPassword} onChange={handleInputChange} className="w-full px-4 py-3 pr-12 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all placeholder-gray-400" required />
               <button type="button" onClick={() => setShowConfirmPassword(!showConfirmPassword)} className="absolute right-3 top-1/2 transform -translate-y-1/2 text-black-600 hover:text-black-700 transition-colors">
@@ -178,9 +189,7 @@ const LoginRegisterApp = () => {
           {userType === "vendor" && (
             <>
               <div>
-                <label htmlFor="isArtisan" className="block text-sm font-medium text-blue-700 mb-1">
-                  {t('Vendor')} <span className="text-red-500">*</span>
-                </label>
+                <label htmlFor="isArtisan" className="block text-sm font-medium text-blue-700 mb-1">{t('Vendor')}<span className="text-red-500">*</span></label>
                 <select id="isArtisan" name="isArtisan" value={formData.isArtisan} onChange={handleInputChange} className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all text-gray-700" required>
                   <option value="">{t('Yes / No')}</option>
                   <option value="yes">{t('Yes')}</option>
@@ -189,34 +198,31 @@ const LoginRegisterApp = () => {
               </div>
 
               <div>
-                <label htmlFor="location" className="block text-sm font-medium text-blue-700 mb-1">
-                  {t('Based in')} <span className="text-red-500">*</span></label>
+                <label htmlFor="location" className="block text-sm font-medium text-blue-700 mb-1">{t('Based in')}<span className="text-red-500">*</span></label>
                 <input type="text" id="location" name="location" placeholder="Accra, Kumasi, Cape Coast ..." value={formData.location} onChange={handleInputChange} className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all placeholder-gray-400" required />
               </div>
             </>
           )}
+
           <div className="flex items-start space-x-3">
             <input type="checkbox" id="terms" checked={acceptTerms} onChange={(e) => setAcceptTerms(e.target.checked)} className="mt-1 w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500" required />
-            <label htmlFor="terms" className="text-sm text-blue-700"> {t('You accept our Terms and Conditions and Privacy Policy')}</label>
+            <label htmlFor="terms" className="text-sm text-blue-700">{t('You accept our Terms and Conditions and Privacy Policy')}</label>
           </div>
 
-          <button onClick={handleRegister} className="w-full bg-blue-700 text-white py-3 px-4 rounded-lg font-medium hover:bg-blue-800 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all transform hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center">{" "} {t('Register now')}
-            <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+          <button onClick={handleRegister} className="w-full bg-blue-700 text-white py-3 px-4 rounded-lg font-medium hover:bg-blue-800 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all transform hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center">{" "}{t('Register now')}
+            <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
             </svg>
           </button>
         </div>
 
         <div className="text-center mt-6 pt-6 border-t border-gray-200">
           <span className="text-gray-600">{t('Already have an account?')}</span>
-          <button
-            onClick={switchToLogin}
-            className="text-blue-600 hover:text-blue-700 font-medium transition-colors"
-          > {" "}{t('Login')}
-          </button>
-        </div> 
+          <button onClick={switchToLogin} className="text-blue-600 hover:text-blue-700 font-medium transition-colors">{" "}{t('Login')}</button>
+        </div>
       </div>
     </div>
   );
 };
+
 export default LoginRegisterApp;

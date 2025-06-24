@@ -8,6 +8,11 @@ import VendorDashboard from "./Pages/VendorDashboard"
 import NotFound from "./Pages/NotFound";
 import AdvertList from "./Components/AdvertList";
 import { ToastContainer } from "react-toastify";
+import VendorSettings from "./Pages/VendorSettings";
+import VendorProfile from "./Pages/VendorProfile";
+import VendorAdvertList from "./Pages/VendorAdvertList";
+import AdvertForm from "./Components/AdvertForm";
+
 
 const deesaxConnectRouter = createBrowserRouter([
   { path: '/', element: <Home /> },
@@ -16,6 +21,10 @@ const deesaxConnectRouter = createBrowserRouter([
   { path: '/view-advert', element: <ViewAdvert /> },
   { path: '/post-advert', element: <PostAdvert /> },
   { path: '/vendor-dashboard', element: <VendorDashboard /> },
+  { path: '/vendor-settings', element: <VendorSettings /> },
+  { path: '/vendor-profile', element: <VendorProfile /> },
+  { path: '/vendor-advert-list', element: <VendorAdvertList /> },
+  { path: '/advert-form', element: <AdvertForm /> },
   { path: '*', element: <NotFound /> },
   { path: '/advert-list', element: <AdvertList />},
 ]);

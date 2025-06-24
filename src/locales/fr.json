@@ -19,7 +19,8 @@
   "Don't have an account?": "Vous n'avez pas de compte?",
   "Already have an account?": "Vous avez déjà un compte?",
   "Vendor": "Vendeur",
-  "User": "Utilisateur",
+  "Are you a vendor or an employer?": "Êtes-vous un vendeur ou un employeur ?",
+  "Employer": "Employeur",
   "Based in": "Basé à",
   "You accept our Terms and Conditions and Privacy Policy": "Vous acceptez nos Conditions Générales et notre Politique de Confidentialité",
   "Login to your account": "Connectez-vous à votre compte",
@@ -44,7 +45,6 @@
   "Enter your email": "Entrez votre e-mail",
   "Send": "Envoyer",
   "All rights reserved": "Tous droits réservés",
-  "Are you a Vendor or a User?": "Êtes-vous un Vendeur ou un Utilisateur ?",
   "Email": "Email",
   "Yes/No": "Oui / Non",
   "Register for free": "Inscrivez-vous gratuitement",
@@ -58,5 +58,6 @@
   "Your one-stop platform for connecting with skilled professionals across various fields.": "Votre plateforme tout-en-un pour trouver des professionnels qualifiés dans divers domaines.",
   "DeesaxConnect is a one-stop platform where people can post their services and find trusted professionals across various fields. Whether you're offering a skill or looking for one, we make it easy to connect, collaborate, and get things done. From creatives to consultants, artisans to tech experts — DeesaxConnect is where services meet opportunity.": "DeesaxConnect est une plateforme unique où les gens peuvent publier leurs services et trouver des professionnels de confiance dans divers domaines. Que vous proposiez une compétence ou que vous en recherchiez une, nous facilitons la connexion, la collaboration et l'accomplissement des tâches. Des créatifs aux consultants, des artisans aux experts en technologie — DeesaxConnect est l'endroit où les services rencontrent les opportunités.",
   "Get Started": "Commencer",
-  "Browse Through Our List of Services Available and Make Your Pick": "Parcourez notre liste de services disponibles et faites votre choix"
+  "Browse Through Our List of Services Available and Make Your Pick": "Parcourez notre liste de services disponibles et faites votre choix",
+   "Go to Homepage": "Aller à la page d'accueil"
 }

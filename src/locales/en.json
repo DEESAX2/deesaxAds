@@ -19,7 +19,8 @@
   "Don't have an account?": "Don't have an account?",
   "Already have an account?": "Already have an account?",
   "Vendor": "Vendor",
-  "User": "User",
+  "Are you a vendor or an employer?": "Are you a vendor or an employer?",
+  "Employer": "Employer",
   "Based in": "Based in",
   "You accept our Terms and Conditions and Privacy Policy": "You accept our Terms and Conditions and Privacy Policy",
   "Login to your account": "Login to your account",
@@ -44,7 +45,6 @@
   "Enter your email": "Enter your email",
   "Send": "Send",
   "All rights reserved": "All rights reserved",
-  "Are you a Vendor or a User?": "Are you a Vendor or a User?",
   "Email": "Email",
   "Yes/No": "Yes/No",
   "Register for free": "Register for free",
@@ -58,5 +58,6 @@
   "Your one-stop platform for connecting with skilled professionals across various fields.": "Your one-stop platform for connecting with skilled professionals across various fields.",
   "DeesaxConnect is a one-stop platform where people can post their services and find trusted professionals across various fields. Whether you're offering a skill or looking for one, we make it easy to connect, collaborate, and get things done. From creatives to consultants, artisans to tech experts — DeesaxConnect is where services meet opportunity.": "DeesaxConnect is a one-stop platform where people can post their services and find trusted professionals across various fields. Whether you're offering a skill or looking for one, we make it easy to connect, collaborate, and get things done. From creatives to consultants, artisans to tech experts — DeesaxConnect is where services meet opportunity.",
   "Get Started": "Get Started",
-  "Browse Through Our List of Services Available and Make Your Pick": "Browse Through Our List of Services Available and Make Your Pick"
+  "Browse Through Our List of Services Available and Make Your Pick": "Browse Through Our List of Services Available and Make Your Pick",
+  "Go to Homepage": "Go to Homepage"
 }

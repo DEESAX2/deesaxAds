@@ -32,7 +32,7 @@ export default function ViewAdvert() {
           <img
             src={craftsmanVintagelogo}
             alt="Craftsman Logo"
-            className="w-full h-auto max-w-sm object-cover rounded-md"/>
+            className="w-full h-auto max-w-sm object-cover rounded-md" />
           <div className="flex flex-col justify-center items-center space-y-4">
             <h1 className="font-bold text-xl sm:text-2xl md:text-3xl">TITLE</h1>
             <p className="text-gray-900 text-sm sm:text-base">
@@ -51,23 +51,27 @@ export default function ViewAdvert() {
           </div>
         </div>
 
+        <div className="mb-4">
+          <label className="block text-gray-700 mb-2">Help Support Our Work By Rating Us</label>
+          <textarea placeholder="Type here...." className="w-full h-32 px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"></textarea>
+        </div>
         <div className="flex flex-col justify-center items-center mt-10 sm:mt-12">
           <h1 className="text-2xl sm:text-3xl text-gray-800 text-center mt-20">
             Help Support Our Work By Rating Us
           </h1>
-          <h2 className="text-xl sm:text-2xl font-bold text-pink-700 m-4 sm:m-5">
+          <h2 className="text-xl sm:text-2xl font-bold text-purple-700 m-4 sm:m-5">
             Vendor Name
           </h2>
           <input
-            className="bg-pink-300 border-2 border-pink-500 rounded-md p-2 w-full max-w-md"
+            className="bg-pink-300 border-2 border-purple-500 rounded-md p-2 w-full max-w-md"
             type="text"
             name="name"
             id="rating-input"
             placeholder="Enter your feedback"
           />
-          <p className="text-xl sm:text-2xl font-bold text-pink-700 m-4 sm:m-5">Rating</p>
-           <input
-          className="bg-pink-300 border-2 border-pink-500 rounded-md p-2 w-full max-w-md"
+          <p className="text-xl sm:text-2xl font-bold text-purple-700 m-4 sm:m-5">Rating</p>
+          <input
+            className="bg-pink-300 border-2 border-purple-500 rounded-md p-2 w-full max-w-md"
             type="text"
             name="name"
             id="rating-input"
