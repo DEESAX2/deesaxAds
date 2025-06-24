@@ -33,7 +33,7 @@ export default function Navbar() {
                         <option value="zh">{t('Chinese')}</option>
                     </select>
                     <Link to="/login" className="bg-gradient-to-r from-button2 to-button3 text-white font-semibold py-2 px-4 md:py-2.5 md:px-7 rounded-full shadow-lg hover:from-special hover:to-button1 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-opacity-75 transition duration-300 ease-in-out w-full md:w-auto ">{t('Login')}</Link>
-                    <Link to="/login" className="bg-gradient-to-r from-button3 to-button2 text-white font-semibold py-2 px-4 md:py-2.5 md:px-7 rounded-full shadow-lg hover:from-special hover:to-button1 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-75 transition duration-300 ease-in-out w-full md:w-auto">{t('Register')}</Link>
+                    <Link to="/register" className="bg-gradient-to-r from-button3 to-button2 text-white font-semibold py-2 px-4 md:py-2.5 md:px-7 rounded-full shadow-lg hover:from-special hover:to-button1 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-75 transition duration-300 ease-in-out w-full md:w-auto">{t('Register')}</Link>
                 </div>
             </div>
 
@@ -54,22 +54,7 @@ export default function Navbar() {
 
                 {/* Desktop Menu */}
                 <div className="hidden md:flex items-center gap-6 w-full justify-end">
-                    {/* Category */}
-                    <select
-                        name="category"
-                        id="category"
-                        value={selectedCategory}
-                        onChange={(e) => setSelectedCategory(e.target.value)}
-                        className="border border-button3 text-gray-700 text-sm rounded-md py-2 px-3"
-                    >
-                        <option value="" disabled>{t('Select Category')}</option>
-                        <option value="Tech & Programming">{t('Tech & Programming')}</option>
-                        <option value="Artisans">{t('Artisans')}</option>
-                        <option value="Food & Beverages">{t('Food & Beverages')}</option>
-                        <option value="Education & Training">{t('Education & Training')}</option>
-                        <option value="Virtual Assistants">{t('Virtual Assistants')}</option>
-                    </select>
-
+                   
                     {/* Links */}
                     <Link to="/" className="text-gray-800 hover:text-button3 font-semibold">{t('Home')}</Link>
                     <Link to="/about" className="text-gray-800 hover:text-button3 font-semibold">{t('About')}</Link>

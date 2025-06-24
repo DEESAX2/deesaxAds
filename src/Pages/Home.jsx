@@ -8,14 +8,24 @@ import cook from "../assets/Images/cook.jpg";
 import designer from "../assets/Images/designer.jpg";
 import stylist from "../assets/Images/stylist.jpg";
 import photo1 from "../assets/Images/photo1.jpg";
-import trainer from "../assets/Images/trainer.jpg";
+
 import AdvertList from "../Components/AdvertList";
 import HowItWorks from "../Components/HowItWorks";
 import AdvertSearchFilter from "../Components/AdvertSearchFilter";
 import { useTranslation } from "react-i18next";
+import carfixer from "../assets/Images/carfixer.jpg";
+import cleaningService from "../assets/Images/cleaningService.jpg";
+import videoeditor from "../assets/Images/videoeditor.jpg";
+import masseur from "../assets/Images/masseur.jpg";
+import trainer from "../assets/Images/trainer.jpg";
+import { Link } from "react-router";
+import teacher from "../assets/Images/teacher.jpg";
 
 export default function Home() {
   const { t } = useTranslation();
+ const serviceImages = [teacher, carfixer, cleaningService, videoeditor, masseur, trainer];
+ 
+const [carouselPage, setCarouselPage] = useState(0);
   const [showImage, setShowImage] = useState(true);
 
   const painterImages = [painter, photo1, cook, designer, stylist, trainer];
@@ -34,6 +44,14 @@ export default function Home() {
     }, 4000);
     return () => clearInterval(interval);
   }, [painterImages.length]);
+
+ useEffect(() => {
+  const interval = setInterval(() => {
+    setCarouselPage((prev) => (prev + 1) % 2); // 2 pages: 0 and 1
+  }, 4000);
+  return () => clearInterval(interval);
+}, []);
+const visibleServices = serviceImages.slice(carouselPage * 3, carouselPage * 3 + 3);
 
   return (
     <>
@@ -75,7 +93,7 @@ export default function Home() {
               {t('Get Started')}
             </button>
 
-            <AdvertSearchFilter />
+
           </div>
 
           <div className="flex-1 p-4 md:p-8">
@@ -88,13 +106,36 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-white">
-        <div className="flex flex-col items-center justify-center text-center p-8 bg-gray-100">
-          <h2>{t('Browse Through Our List of Services Available and Make Your Pick')}</h2>
-        </div>
-        <AdvertList />
-      </section>
+  {/* service section */}
+      <section className="w-full bg-gray-50 py-10">
+  <h2 className="text-center text-2xl md:text-3xl font-bold mb-6 text-gray-800">
+    {t("Sign in to get access to a list of services available such as these ones and find what you need")}
+  </h2>
+  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 justify-center max-w-5xl mx-auto">
+    {visibleServices.map((img, idx) => (
+      <div key={idx} className="relative w-full aspect-[4/3] overflow-hidden rounded-xl shadow-lg">
+        <img
+          src={img}
+          alt={`Service ${carouselPage * 3 + idx + 1}`}
+          className="w-[100%] h-[100%] object-cover transition-all duration-700"
+        />
+      </div>
+    ))}
+  </div>
+  {/* Carousel indicators */}
+  <div className="flex justify-center mt-4 gap-2">
+    {[0, 1].map((page) => (
+      <span
+        key={page}
+        className={`block w-3 h-3 rounded-full ${carouselPage === page ? 'bg-button3' : 'bg-gray-300'}`}
+      />
+    ))}
+  </div>
 
+  <section>
+    <embed src="" type="" />
+  </section>
+</section>
       <section className="bg-button1">
         <HowItWorks />
       </section>
