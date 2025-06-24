@@ -4,7 +4,7 @@ import herobg from "../assets/Images/herobg.png";
 import videodeesax from "../assets/Videos/videodeesax.mp4";
 import Footer from "../Components/Footer";
 import painter from "../assets/Images/painter.jpg";
-import cook from "../assets/Images/cook.jpg"; 
+import cook from "../assets/Images/cook.jpg";
 import designer from "../assets/Images/designer.jpg";
 import stylist from "../assets/Images/stylist.jpg";
 import photo1 from "../assets/Images/photo1.jpg";
@@ -12,12 +12,12 @@ import trainer from "../assets/Images/trainer.jpg";
 import AdvertList from "../Components/AdvertList";
 import HowItWorks from "../Components/HowItWorks";
 import AdvertSearchFilter from "../Components/AdvertSearchFilter";
-
+import { useTranslation } from "react-i18next";
 
 export default function Home() {
+  const { t } = useTranslation();
   const [showImage, setShowImage] = useState(true);
 
-  // Carousel for painter images
   const painterImages = [painter, photo1, cook, designer, stylist, trainer];
   const [painterIndex, setPainterIndex] = useState(0);
 
@@ -28,14 +28,12 @@ export default function Home() {
     return () => clearInterval(interval);
   }, []);
 
-  // Painter image carousel effect
   useEffect(() => {
     const interval = setInterval(() => {
       setPainterIndex((prev) => (prev + 1) % painterImages.length);
-    }, 4000); // Change every 4 seconds
+    }, 4000);
     return () => clearInterval(interval);
   }, [painterImages.length]);
-
 
   return (
     <>
@@ -66,18 +64,20 @@ export default function Home() {
         <div className="flex flex-col md:flex-row">
           <div className="flex-1 p-4 md:p-8">
             <h1 className="text-2xl md:text-4xl font-bold text-gray-800 mb-4">
-              Welcome to Deesax  Connect
+              {t('Welcome to Deesax Connect')}
             </h1>
             <p className="text-gray-600 mb-6 font-bold">
-              Your one-stop platform for connecting with skilled professionals across various fields.
+              {t('Your one-stop platform for connecting with skilled professionals across various fields.')}
             </p>
-            <p>DeesaxConnect is a one-stop platform where people can post their services and find trusted professionals across various fields. Whether you're offering a skill or looking for one, we make it easy to connect, collaborate, and get things done. From creatives to consultants, artisans to tech experts — DeesaxConnect is where services meet opportunity.</p>
+            <p>{t('DeesaxConnect is a one-stop platform where people can post their services and find trusted professionals across various fields. Whether you\'re offering a skill or looking for one, we make it easy to connect, collaborate, and get things done. From creatives to consultants, artisans to tech experts — DeesaxConnect is where services meet opportunity.')}</p>
+
             <button className="mt-6 bg-gradient-to-r from-button2 to-button3 text-white font-semibold py-2 px-4 rounded-full shadow-lg hover:from-special hover:to-button1 transition duration-300 ease-in-out">
-              Get Started
+              {t('Get Started')}
             </button>
 
             <AdvertSearchFilter />
           </div>
+
           <div className="flex-1 p-4 md:p-8">
             <img
               src={painterImages[painterIndex]}
@@ -89,16 +89,15 @@ export default function Home() {
       </section>
 
       <section className="bg-white">
-          <div  className="flex flex-col items-center justify-center text-center p-8 bg-gray-100">
-        <h2> Browse Through Our List of Services Available and Make Your Pick </h2>
+        <div className="flex flex-col items-center justify-center text-center p-8 bg-gray-100">
+          <h2>{t('Browse Through Our List of Services Available and Make Your Pick')}</h2>
         </div>
-          <AdvertList />
+        <AdvertList />
       </section>
 
-<section className="bg-button1">
-   <HowItWorks />
-</section>
-
+      <section className="bg-button1">
+        <HowItWorks />
+      </section>
 
       <Footer />
     </>

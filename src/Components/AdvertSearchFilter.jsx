@@ -7,8 +7,8 @@ export default function FilterSearch() {
         {/* Keyword Search */}
         <input
           type="text"
-          name="keyword"
-          placeholder="Search services or keywords"
+          name="title"
+          placeholder="Search service or keywords"
           className="w-full border border-gray-300 rounded-md px-4 py-2 text-sm focus:ring-button3 focus:outline-none"
         />
 
@@ -20,9 +20,9 @@ export default function FilterSearch() {
           <option value="">All Categories</option>
           <option value="Tech & Programming">Tech & Programming</option>
           <option value="Artisans">Artisans</option>
-          <option value="Education">Education</option>
-          <option value="Design & Creative">Design & Creative</option>
-          <option value="Virtual Assistant">Virtual Assistant</option>
+          <option value="Education & Training">Education & Training</option>
+          <option value="Food & Beverages">Food & Beverages</option>
+          <option value="Health & Wellness ">Health & Wellness </option>
         </select>
 
         {/* Location Input */}
