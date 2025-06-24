@@ -12,6 +12,7 @@ import VendorSettings from "./Pages/VendorSettings";
 import VendorProfile from "./Pages/VendorProfile";
 import VendorAdvertList from "./Pages/VendorAdvertList";
 import AdvertForm from "./Components/AdvertForm";
+import EditAdvert from "./Pages/EditAdvert";
 
 
 const deesaxConnectRouter = createBrowserRouter([
@@ -25,6 +26,7 @@ const deesaxConnectRouter = createBrowserRouter([
   { path: '/vendor-profile', element: <VendorProfile /> },
   { path: '/vendor-advert-list', element: <VendorAdvertList /> },
   { path: '/advert-form', element: <AdvertForm /> },
+  { path: '/edit-advert', element: <EditAdvert /> },
   { path: '*', element: <NotFound /> },
   { path: '/advert-list', element: <AdvertList />},
 ]);

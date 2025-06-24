@@ -12,7 +12,7 @@ export default function VendorSideBar() {
   return (
     <>
       {/* Sidebar */}
-      <aside className="w-60 bg-white/80 backdrop-blur-lg shadow-xl rounded-tr-3xl rounded-br-3xl flex flex-col p-8">
+      <aside className="w-60 bg-white/80 backdrop-blur-lg shadow-xl rounded-tr-3xl  flex flex-col p-8">
         <div className="p-6 border-b">
           <h2 className="text-3xl font-extrabold text-sky-600 mb-10 tracking-wide">Vendor Panel</h2>
         </div>

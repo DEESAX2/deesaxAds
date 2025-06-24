@@ -1,14 +1,17 @@
 import { Link } from "react-router";
 import VendorSideBar from "../Components/VendorSideBar";
+import Navbar from "../Components/Navbar";
+import Footer from "../Components/Footer";
 
 
-  export default function VendorDashboard() {
-    return (
-      <>
+export default function VendorDashboard() {
+  return (
+    <>
+      <Navbar />
       <div className="min-h-screen flex bg-gradient-to-br from-[var(--color-nav)] via-[var(--color-special)] to-[var(--color-light)] font-sans">
         {/* Sidebar */}
         <VendorSideBar />
-        <div className="flex-1 max-w-6xl mx-auto p-6 bg-white/80 backdrop-blur-lg rounded-3xl shadow-xl border border-[var(--color-nav)]">
+        <div className="flex-1 max-w-6xl mx-auto p-6 bg-white/80 backdrop-blur-lg  shadow-xl border border-[var(--color-nav)]">
           {/* Main Content */}
           <main className="flex-1 p-10 flex flex-col gap-8">
             {/* Header */}
@@ -55,7 +58,7 @@ import VendorSideBar from "../Components/VendorSideBar";
                 <p className="text-2xl font-bold text-[var(--color-light)]">2</p>
               </div>
             </section>
-            
+
             {/* Adverts List */}
             <section>
               <h2 className="text-lg font-semibold mb-4 text-[var(--color-button2)]">
@@ -96,28 +99,10 @@ import VendorSideBar from "../Components/VendorSideBar";
                 ))}
               </div>
             </section>
-
-            {/* Unique Section (commented out for now) */}
-            {/*
-          <section className="mt-8">
-            <div className="rounded-2xl bg-white/80 backdrop-blur-lg p-8 shadow-xl flex flex-col md:flex-row items-center justify-between gap-6 border border-[var(--color-nav)]">
-              <div>
-                <h2 className="text-xl font-bold text-[var(--color-button1)] mb-2">
-                  Grow your business with deesaxAds
-                </h2>
-                <p className="text-[var(--color-special)]">
-                  Access analytics, manage products, and connect with more customers.
-                </p>
-              </div>
-              <button className="bg-[var(--color-light)] hover:bg-[var(--color-button3)] text-white font-semibold px-6 py-3 rounded-xl shadow transition">
-                Upgrade Now
-              </button>
-            </div>
-          </section>
-          */}
           </main>
         </div>
       </div>
+      <Footer />
     </>
-    );
-  }
+  );
+}
