@@ -87,6 +87,7 @@ const visibleServices = serviceImages.slice(carouselPage * 3, carouselPage * 3 +
             <p className="text-gray-600 mb-6 font-bold">
               {t('Your one-stop platform for connecting with skilled professionals across various fields.')}
             </p>
+            <h1></h1>
             <p>{t('DeesaxConnect is a one-stop platform where people can post their services and find trusted professionals across various fields. Whether you\'re offering a skill or looking for one, we make it easy to connect, collaborate, and get things done. From creatives to consultants, artisans to tech experts — DeesaxConnect is where services meet opportunity.')}</p>
 
             <button className="mt-6 bg-gradient-to-r from-button2 to-button3 text-white font-semibold py-2 px-4 rounded-full shadow-lg hover:from-special hover:to-button1 transition duration-300 ease-in-out"><Link to="/register">
