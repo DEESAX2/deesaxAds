@@ -5,7 +5,7 @@ import ViewAdvert from "./Pages/ViewAdvert";
 import PostAdvert from "./Pages/PostAdvert";
 import VendorDashboard from "./Pages/VendorDashboard"
 import NotFound from "./Pages/NotFound";
-import AdvertList from "./Components/AdvertList";
+import AdvertList from "./Pages/AdvertList";
 import { ToastContainer } from "react-toastify";
 import VendorSettings from "./Pages/VendorSettings";
 import VendorProfile from "./Pages/VendorProfile";
