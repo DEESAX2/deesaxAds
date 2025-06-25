@@ -57,7 +57,7 @@ const RegisterApp = () => {
       });
 
       toast.success("Registration successful!");
-      navigate("/");
+      navigate("/vendor-dashboard");
     } catch (error) {
       const errorMessage =
         error.response?.data?.message || "Registration failed due to server error.";
