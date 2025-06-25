@@ -4,27 +4,60 @@ import { HiOutlinePlusCircle } from "react-icons/hi";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import VendorSideBar from "./VendorSideBar";
+import { apiClient } from "../api/client";
 
 export default function AdvertForm() {
     const navigate = useNavigate();
     const [submitting, setSubmitting] = useState(false);
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        setSubmitting(true);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-        try {
-            // Simulate successful submission
-            toast.success("Advert posted successfully!");
+    try {
+      const payload = new FormData();
+      for (let key in formData) {
+        payload.append(key, formData[key]);
+      }
 
-            setTimeout(() => {
-                navigate("/vendor-advert-list"); // Redirect after success
-            }, 2500);
-        } catch (error) {
-            toast.error("Failed to post advert. Please try again.");
-            setSubmitting(false);
-        }
-    };
+      const response = await apiClient.post("https://ad-api-y20z.onrender.com/api/v1", {
+        method: "POST",
+        body: payload,
+        headers: {
+          // 'Content-Type': multipart/form-data is automatically set by browser
+          Authorization: `Bearer ${localStorage.getItem("token")}`, // adjust if needed
+        },
+      });
+
+      if (!response.ok) throw new Error("Failed to post advert");
+
+      toast.success("Advert posted successfully!");
+      setTimeout(() => navigate("/vendor-advert-list"), 2000);
+    } catch (err) {
+      console.error(err);
+      toast.error("Error submitting advert. Please try again.");
+    }
+  };
+
+    const [formData, setFormData] = useState({
+        title: "",
+        contact: "",
+        location: "",
+        category: "",
+        description: "",
+        price: "",
+        image: null,
+    });
+
+      const handleChange = (e) => {
+    const { name, value, type, files } = e.target;
+    if (type === "file") {
+      setFormData({ ...formData, [name]: files[0] });
+    } else {
+      setFormData({ ...formData, [name]: value });
+    }
+  };
+
+
 
     return (
         <div className="flex min-h-screen bg-gradient-to-br from-[var(--color-nav)] via-[var(--color-special)] to-[var(--color-light)] font-sans">
@@ -91,14 +124,16 @@ export default function AdvertForm() {
                             <div className="flex gap-4 pt-4">
                                 <button
                                     type="submit"
-                                    disabled={submitting}
+                                    // disabled={submitting}
+                                    onClick={() => navigate("/vendor-advert-list")}
                                     className="bg-gradient-to-r from-indigo-500 to-violet-600 hover:from-indigo-600 hover:to-violet-700 text-white font-bold py-2 px-6 rounded-lg shadow-md transition-all duration-200"
                                 >
-                                    {submitting ? "Posting..." : "Submit Advert"}
+                                    Submit
+                                    {/* {submitting ? "Posting..." : "Submit Advert"} */}
                                 </button>
                                 <button
                                     type="button"
-                                    onClick={() => navigate("/vendor/adverts")}
+                                    onClick={() => navigate("/vendor-advert-list")}
                                     className="bg-gray-200 hover:bg-red-500 hover:text-white text-gray-800 font-semibold py-2 px-6 rounded-lg shadow-md transition-all duration-200"
                                 >
                                     Cancel
