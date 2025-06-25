@@ -43,7 +43,6 @@ const LoginApp = () => {
         }
       );
 
-      // Store the token from the response (as per API docs)
       localStorage.setItem("token", response.data.token);
 
       toast.success("Login successful!");
@@ -70,7 +69,7 @@ const LoginApp = () => {
   );
 
   return (
-    <div className="min-h-screen bg-blue-500 flex items-center justify-center p-4 relative">
+    <div className="min-h-screen bg-[#38cca0] flex items-center justify-center p-4 relative">
       <HomeArrow />
 
       <div className="max-w-md w-full bg-white rounded-2xl shadow-xl p-8">
@@ -117,7 +116,7 @@ const LoginApp = () => {
 
             <button
               type="submit"
-              className="w-full bg-blue-600 text-white py-3 px-4 rounded-lg font-medium hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all transform hover:scale-[1.02] active:scale-[0.98]"
+              className="w-full bg-gradient-to-r from-button2 to-button3 text-white py-3 px-4 rounded-lg font-medium hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all transform hover:scale-[1.02] active:scale-[0.98]"
             >
               {t('LOGIN')}
             </button>

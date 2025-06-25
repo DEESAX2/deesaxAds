@@ -16,7 +16,7 @@ const RegisterApp = () => {
     email: "",
     password: "",
     confirmPassword: "",
-    role: "customer", // Default to "customer" (not "user")
+    role: "customer",
   });
 
   const [showPassword, setShowPassword] = useState(false);
@@ -42,14 +42,13 @@ const RegisterApp = () => {
     }
 
     try {
-      // Send as JSON, not FormData
       const payload = {
         firstName: formData.firstName,
         lastName: formData.lastName,
         email: formData.email,
         password: formData.password,
         confirmPassword: formData.confirmPassword,
-        role: formData.role, // Will be "vendor" or "customer"
+        role: formData.role,
       };
 
       const response = await apiClient.post("/users/signup", payload, {
@@ -66,15 +65,20 @@ const RegisterApp = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 flex items-center justify-center p-4">
-      <div className="max-w-md w-full bg-white rounded-2xl shadow-2xl p-6">
-        <h1 className="text-2xl font-bold text-center text-blue-700 mb-6">
+    
+    
+    <div className="min-h-screen bg-[#38cca0] flex items-center justify-center p-4">
+      <div className="max-w-md w-full bg-white rounded-xl shadow-2xl p-6">
+        <h1 className="text-2xl font-italic text-center text-white-700 mb-6 bg-gradient-to-r from-button2 to-button3 text-white rounded-lg py-2 ">
           {t("Register for free")}
         </h1>
+        <div className="flex items-center justify-center font-bold ">
+           Are you a Vendor or a User?
+        </div>
 
         <form onSubmit={handleRegister} className="space-y-4">
           {/* Role Selection */}
-          <div className="flex justify-between bg-gray-50 rounded-lg p-1">
+          <div className="flex justify-between bg-gray-50 rounded-lg p-1 mt-2.5">
             <button
               type="button"
               onClick={() => setFormData((prev) => ({ ...prev, role: "vendor" }))}
@@ -96,6 +100,7 @@ const RegisterApp = () => {
               User
             </button>
           </div>
+          
 
           {/* First Name */}
           <div>
@@ -216,13 +221,14 @@ const RegisterApp = () => {
           {/* Submit */}
           <button
             type="submit"
-            className="w-full bg-blue-700 text-white py-3 px-4 rounded-lg font-medium hover:bg-blue-800 transition-all mt-4"
+            className="w-full bg-gradient-to-r from-button2 to-button3 text-white py-3 px-4 rounded-lg font-medium hover:bg-blue-800 transition-all mt-4"
           >
             Register
           </button>
         </form>
       </div>
     </div>
+     
   );
 };
 
