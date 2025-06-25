@@ -1,5 +1,4 @@
 import { createBrowserRouter, RouterProvider } from "react-router";
-import Register from "./Pages/Register";
 import Login from "./Pages/Login";
 import Home from "./Pages/Home";
 import ViewAdvert from "./Pages/ViewAdvert";
@@ -12,6 +11,8 @@ import VendorSettings from "./Pages/VendorSettings";
 import VendorProfile from "./Pages/VendorProfile";
 import VendorAdvertList from "./Pages/VendorAdvertList";
 import AdvertForm from "./Components/AdvertForm";
+import EditAdvert from "./Pages/EditAdvert";
+import Register from "./Pages/Register";
 
 
 const deesaxConnectRouter = createBrowserRouter([
@@ -25,6 +26,7 @@ const deesaxConnectRouter = createBrowserRouter([
   { path: '/vendor-profile', element: <VendorProfile /> },
   { path: '/vendor-advert-list', element: <VendorAdvertList /> },
   { path: '/advert-form', element: <AdvertForm /> },
+  { path: '/edit-advert', element: <EditAdvert /> },
   { path: '*', element: <NotFound /> },
   { path: '/advert-list', element: <AdvertList />},
 ]);

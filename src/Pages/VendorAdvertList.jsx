@@ -1,6 +1,7 @@
 import VendorSideBar from "../Components/VendorSideBar";
 import { Link } from "react-router";
 
+
 export default function VendorAdvertList() {
     return (
         <>
@@ -20,7 +21,7 @@ export default function VendorAdvertList() {
                             <p className="text-sm text-gray-500 mt-1 text-center">Brief description of the advert goes here.</p>
                             <p className="text-lg font-bold mt-2 text-blue-600">GHS 99.99</p>
                             <div className="flex justify-between w-full mt-4 text-sm">
-                                <a href="/vendor/adverts/1/edit" className="text-blue-600 hover:text-blue-800 font-medium transition-colors duration-200">Edit</a>
+                                <Link to="/edit-advert" className="text-blue-600 hover:text-blue-800 font-medium transition-colors duration-200">Edit</Link>
                                 <a href="/vendor/adverts/1/delete" className="text-red-500 hover:text-red-700 font-medium transition-colors duration-200">Delete</a>
                             </div>
                         </div>
@@ -36,7 +37,7 @@ export default function VendorAdvertList() {
                             <p className="text-sm text-gray-500 mt-1 text-center">Another description text goes here.</p>
                             <p className="text-lg font-bold mt-2 text-blue-600">GHS 50.00</p>
                             <div className="flex justify-between w-full mt-4 text-sm">
-                                <a href="/vendor/adverts/2/edit" className="text-blue-600 hover:text-blue-800 font-medium transition-colors duration-200">Edit</a>
+                                <Link to="/edit-advert" className="text-blue-600 hover:text-blue-800 font-medium transition-colors duration-200">Edit</Link>
                                 <a href="/vendor/adverts/2/delete" className="text-red-500 hover:text-red-700 font-medium transition-colors duration-200">Delete</a>
                             </div>
                         </div>
@@ -50,7 +51,7 @@ export default function VendorAdvertList() {
                             <p className="text-sm text-gray-500 mt-1 text-center">Another description text goes here.</p>
                             <p className="text-lg font-bold mt-2 text-blue-600">GHS 50.00</p>
                             <div className="flex justify-between w-full mt-4 text-sm">
-                                <a href="/vendor/adverts/2/edit" className="text-blue-600 hover:text-blue-800 font-medium transition-colors duration-200">Edit</a>
+                                <Link to="/edit-advert" className="text-blue-600 hover:text-blue-800 font-medium transition-colors duration-200">Edit</Link>
                                 <a href="/vendor/adverts/2/delete" className="text-red-500 hover:text-red-700 font-medium transition-colors duration-200">Delete</a>
                             </div>
                         </div>
