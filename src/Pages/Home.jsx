@@ -89,8 +89,8 @@ const visibleServices = serviceImages.slice(carouselPage * 3, carouselPage * 3 +
             </p>
             <p>{t('DeesaxConnect is a one-stop platform where people can post their services and find trusted professionals across various fields. Whether you\'re offering a skill or looking for one, we make it easy to connect, collaborate, and get things done. From creatives to consultants, artisans to tech experts — DeesaxConnect is where services meet opportunity.')}</p>
 
-            <button className="mt-6 bg-gradient-to-r from-button2 to-button3 text-white font-semibold py-2 px-4 rounded-full shadow-lg hover:from-special hover:to-button1 transition duration-300 ease-in-out">
-              {t('Get Started')}
+            <button className="mt-6 bg-gradient-to-r from-button2 to-button3 text-white font-semibold py-2 px-4 rounded-full shadow-lg hover:from-special hover:to-button1 transition duration-300 ease-in-out"><Link to="/register">
+              {t('Get Started')}</Link>
             </button>
 
 
@@ -107,35 +107,39 @@ const visibleServices = serviceImages.slice(carouselPage * 3, carouselPage * 3 +
       </section>
 
   {/* service section */}
-      <section className="w-full bg-gray-50 py-10">
-  <h2 className="text-center text-2xl md:text-3xl font-bold mb-6 text-gray-800">
+   <section className="w-full bg-gray-50 py-10 overflow-hidden">
+  <h2 className="text-center text-2xl md:text-lg font-bold mb-6 text-gray-800">
     {t("Sign in to get access to a list of services available such as these ones and find what you need")}
   </h2>
-  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 justify-center max-w-5xl mx-auto">
-    {visibleServices.map((img, idx) => (
-      <div key={idx} className="relative w-full aspect-[4/3] overflow-hidden rounded-xl shadow-lg">
-        <img
-          src={img}
-          alt={`Service ${carouselPage * 3 + idx + 1}`}
-          className="w-[100%] h-[100%] object-cover transition-all duration-700"
-        />
-      </div>
-    ))}
+  <div className="relative w-full overflow-hidden">
+    <div className="flex gap-6 animate-marquee">
+      {[...serviceImages, ...serviceImages].map((img, idx) => (
+        <div key={idx} className="relative w-80 aspect-[4/3] flex-shrink-0 overflow-hidden rounded-xl shadow-lg">
+          <img
+            src={img}
+            alt={`Service ${idx + 1}`}
+            className="w-full h-full object-cover"
+          />
+        </div>
+      ))}
+    </div>
   </div>
+  
   {/* Carousel indicators */}
-  <div className="flex justify-center mt-4 gap-2">
+  <div className="flex justify-center mt-4 gap-2 ">
     {[0, 1].map((page) => (
       <span
         key={page}
-        className={`block w-3 h-3 rounded-full ${carouselPage === page ? 'bg-button3' : 'bg-gray-300'}`}
+        className={`block w-6 h-4 rounded-md ${carouselPage === page ? 'bg-button3' : 'bg-gray-300'}`}
       />
     ))}
   </div>
+  </section>
 
   <section>
     <embed src="" type="" />
   </section>
-</section>
+
       <section className="bg-button1">
         <HowItWorks />
       </section>

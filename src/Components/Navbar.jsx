@@ -73,9 +73,9 @@ const logout = () => {
                    
                     {/* Links */}
                     <Link to="/" className="text-gray-800 hover:text-button3 font-semibold">{t('Home')}</Link>
-                    <Link to="/about" className="text-gray-800 hover:text-button3 font-semibold">{t('About')}</Link>
-                    <Link to="/contact" className="text-gray-800 hover:text-button3 font-semibold">{t('Contact')}</Link>
-                    <Link to="/pages" className="text-gray-800 hover:text-button3 font-semibold">{t('Pages')}</Link>
+                    <a href="#about" className="text-gray-800 hover:text-button3 font-semibold">{t('About')}</a>
+                    <a href="#footer" className="text-gray-800 hover:text-button3 font-semibold">{t('Contact')}</a>
+                    <Link to="/advert-list" className="text-gray-800 hover:text-button3 font-semibold">{t('All Ads')}</Link>
                 </div>
 
                 {/* Mobile Menu */}
