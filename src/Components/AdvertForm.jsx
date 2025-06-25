@@ -9,35 +9,6 @@ import { apiClient } from "../api/client";
 export default function AdvertForm() {
     const navigate = useNavigate();
     const [submitting, setSubmitting] = useState(false);
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    try {
-      const payload = new FormData();
-      for (let key in formData) {
-        payload.append(key, formData[key]);
-      }
-
-      const response = await apiClient.post("https://ad-api-y20z.onrender.com/api/v1", {
-        method: "POST",
-        body: payload,
-        headers: {
-          // 'Content-Type': multipart/form-data is automatically set by browser
-          Authorization: `Bearer ${localStorage.getItem("token")}`, // adjust if needed
-        },
-      });
-
-      if (!response.ok) throw new Error("Failed to post advert");
-
-      toast.success("Advert posted successfully!");
-      setTimeout(() => navigate("/vendor-advert-list"), 2000);
-    } catch (err) {
-      console.error(err);
-      toast.error("Error submitting advert. Please try again.");
-    }
-  };
-
     const [formData, setFormData] = useState({
         title: "",
         contact: "",
@@ -48,16 +19,47 @@ export default function AdvertForm() {
         image: null,
     });
 
-      const handleChange = (e) => {
-    const { name, value, type, files } = e.target;
-    if (type === "file") {
-      setFormData({ ...formData, [name]: files[0] });
-    } else {
-      setFormData({ ...formData, [name]: value });
-    }
-  };
+    const handleChange = (e) => {
+        const { name, value, type, files } = e.target;
+        setFormData({
+            ...formData,
+            [name]: type === "file" ? files[0] : value,
+        });
+    };
 
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setSubmitting(true);
 
+        try {
+            const token = localStorage.getItem("token");
+            if (!token) {
+                throw new Error("No authentication token found. Please log in.");
+            }
+
+            const payload = new FormData();
+            for (let key in formData) {
+                if (formData[key] !== null) {
+                    payload.append(key, formData[key]);
+                }
+            }
+
+            const response = await apiClient.post("/add", payload, {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                    // Content-Type is set automatically for FormData
+                },
+            });
+
+            toast.success("Advert posted successfully!");
+            setTimeout(() => navigate("/vendor-advert-list"), 2000);
+        } catch (err) {
+            console.error("Error submitting advert:", err);
+            toast.error(err.message || "Error submitting advert. Please try again.");
+        } finally {
+            setSubmitting(false);
+        }
+    };
 
     return (
         <div className="flex min-h-screen bg-gradient-to-br from-[var(--color-nav)] via-[var(--color-special)] to-[var(--color-light)] font-sans">
@@ -72,22 +74,65 @@ export default function AdvertForm() {
 
                         <form onSubmit={handleSubmit} className="space-y-6">
                             <div>
-                                <label className="block text-gray-700 font-semibold mb-1" htmlFor="title">Title</label>
-                                <input id="title" type="text" placeholder="Enter advert title" required className="w-full py-2 px-4 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-400 border-gray-300 text-gray-700" />
+                                <label className="block text-gray-700 font-semibold mb-1" htmlFor="title">
+                                    Title
+                                </label>
+                                <input
+                                    id="title"
+                                    name="title"
+                                    type="text"
+                                    placeholder="Enter advert title"
+                                    required
+                                    value={formData.title}
+                                    onChange={handleChange}
+                                    className="w-full py-2 px-4 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-400 border-gray-300 text-gray-700"
+                                />
                             </div>
 
                             <div>
-                                <label className="block text-gray-700 font-semibold mb-1" htmlFor="contact">Contact Information</label>
-                                <input id="contact" name="contact" type="text" required placeholder="Phone number" className="w-full py-2 px-4 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-400 border-gray-300 text-gray-700" />
+                                <label className="block text-gray-700 font-semibold mb-1" htmlFor="contact">
+                                    Contact Information
+                                </label>
+                                <input
+                                    id="contact"
+                                    name="contact"
+                                    type="text"
+                                    required
+                                    placeholder="Phone number"
+                                    value={formData.contact}
+                                    onChange={handleChange}
+                                    className="w-full py-2 px-4 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-400 border-gray-300 text-gray-700"
+                                />
                             </div>
 
                             <div>
-                                <input type="text" name="location" placeholder="Location" className="w-full py-2 px-4 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-400 border-gray-300 text-gray-700" />
+                                <label className="block text-gray-700 font-semibold mb-1" htmlFor="location">
+                                    Location
+                                </label>
+                                <input
+                                    id="location"
+                                    name="location"
+                                    type="text"
+                                    required
+                                    placeholder="Location"
+                                    value={formData.location}
+                                    onChange={handleChange}
+                                    className="w-full py-2 px-4 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-400 border-gray-300 text-gray-700"
+                                />
                             </div>
 
                             <div>
-                                <label className="block text-gray-700 font-semibold mb-1">Category</label>
-                                <select name="category" required className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 border-gray-300 bg-white">
+                                <label className="block text-gray-700 font-semibold mb-1" htmlFor="category">
+                                    Category
+                                </label>
+                                <select
+                                    id="category"
+                                    name="category"
+                                    required
+                                    value={formData.category}
+                                    onChange={handleChange}
+                                    className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 border-gray-300 bg-white"
+                                >
                                     <option value="">Select a category</option>
                                     <option value="Tech & Programming">Tech & Programming</option>
                                     <option value="Artisans">Artisans</option>
@@ -98,25 +143,65 @@ export default function AdvertForm() {
                             </div>
 
                             <div>
-                                <label className="block text-gray-700 font-semibold mb-1" htmlFor="description">Description</label>
-                                <textarea id="description" placeholder="Enter advert description" className="w-full py-2 px-4 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-400 border-gray-300 text-gray-700" />
+                                <label className="block text-gray-700 font-semibold mb-1" htmlFor="description">
+                                    Description
+                                </label>
+                                <textarea
+                                    id="description"
+                                    name="description"
+                                    required
+                                    placeholder="Enter advert description"
+                                    value={formData.description}
+                                    onChange={handleChange}
+                                    className="w-full py-2 px-4 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-400 border-gray-300 text-gray-700"
+                                />
                             </div>
 
                             <div>
-                                <label className="block text-gray-700 font-semibold mb-1" htmlFor="price">Price (GHS)</label>
-                                <input id="price" type="number" min="0" step="0.01" placeholder="Enter price" className="w-full py-2 px-4 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-400 border-gray-300 text-gray-700" />
+                                <label className="block text-gray-700 font-semibold mb-1" htmlFor="price">
+                                    Price (GHS)
+                                </label>
+                                <input
+                                    id="price"
+                                    name="price"
+                                    type="number"
+                                    min="0"
+                                    step="0.01"
+                                    required
+                                    placeholder="Enter price"
+                                    value={formData.price}
+                                    onChange={handleChange}
+                                    className="w-full py-2 px-4 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-400 border-gray-300 text-gray-700"
+                                />
                             </div>
 
                             <div>
-                                <label className="block text-gray-700 font-semibold mb-1" htmlFor="image">Upload Image</label>
-                                <input id="image" type="file" accept="image/*" className="w-full p-3 border rounded-lg file:py-2 file:px-4 file:rounded file:border-0 file:text-sm file:font-semibold file:bg-indigo-50 file:text-indigo-700 hover:file:bg-indigo-100 transition" />
+                                <label className="block text-gray-700 font-semibold mb-1" htmlFor="image">
+                                    Upload Image
+                                </label>
+                                <input
+                                    id="image"
+                                    name="image"
+                                    type="file"
+                                    accept="image/*"
+                                    onChange={handleChange}
+                                    className="w-full p-3 border rounded-lg file:py-2 file:px-4 file:rounded file:border-0 file:text-sm file:font-semibold file:bg-indigo-50 file:text-indigo-700 hover:file:bg-indigo-100 transition"
+                                />
                             </div>
 
                             <div>
                                 <label className="inline-flex items-center">
-                                    <input type="checkbox" name="terms" required className="form-checkbox h-5 w-5 text-indigo-600" />
+                                    <input
+                                        type="checkbox"
+                                        name="terms"
+                                        required
+                                        className="form-checkbox h-5 w-5 text-indigo-600"
+                                    />
                                     <span className="ml-2 text-gray-700">
-                                        I agree to the <a href="#" className="text-indigo-600 hover:underline">terms and conditions</a>
+                                        I agree to the{" "}
+                                        <a href="#" className="text-indigo-600 hover:underline">
+                                            terms and conditions
+                                        </a>
                                     </span>
                                 </label>
                             </div>
@@ -124,12 +209,10 @@ export default function AdvertForm() {
                             <div className="flex gap-4 pt-4">
                                 <button
                                     type="submit"
-                                    // disabled={submitting}
-                                    onClick={() => navigate("/vendor-advert-list")}
+                                    disabled={submitting}
                                     className="bg-gradient-to-r from-indigo-500 to-violet-600 hover:from-indigo-600 hover:to-violet-700 text-white font-bold py-2 px-6 rounded-lg shadow-md transition-all duration-200"
                                 >
-                                    Submit
-                                    {/* {submitting ? "Posting..." : "Submit Advert"} */}
+                                    {submitting ? "Posting..." : "Submit Advert"}
                                 </button>
                                 <button
                                     type="button"
@@ -146,7 +229,6 @@ export default function AdvertForm() {
         </div>
     );
 }
-
 
 
 
