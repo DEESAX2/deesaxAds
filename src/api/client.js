@@ -5,14 +5,15 @@ export const apiClient = axios.create({
 });
 
 
+// SWR/Fetcher with Authorization header
 export const apiFetcher = async (url) => {
-   const response = await apiClient.get(url, {
-    headers: {
-        Authorization: `Bearer ${localStorage.getItem('ACCESS_TOKEN')}`
-    }
-   });
-   return response.data;
-
-
-
-}
+    const token = localStorage.getItem("token");
+    const response = await apiClient.get(url, {
+        headers: {
+            "Content-Type": "application/json",
+            ...(token && { Authorization: `Bearer ${token}` }),
+        },
+        withCredentials: true,
+    });
+    return response.data;
+};

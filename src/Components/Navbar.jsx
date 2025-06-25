@@ -4,21 +4,37 @@ import DeesaxConnect from "../assets/Images/DeesaxConnect.png";
 import { useTranslation } from "react-i18next";
 import i18n from "../i18n";
 import { Menu, X } from "lucide-react"; // Hamburger icons
+import useSWR from "swr";
+import { apiFetcher } from "../api/client";
+import { useNavigate } from "react-router";
 
 export default function Navbar() {
+    const navigate = useNavigate();
+    const {data} = useSWR("/users/profile", apiFetcher);
+
+const logout = () => {
+    localStorage.removeItem("token");
+
+    navigate("/login");
+}
     const { t } = useTranslation();
     const [selectedCategory, setSelectedCategory] = useState("");
     const [menuOpen, setMenuOpen] = useState(false);
 
     const handleLanguageChange = (e) => {
         i18n.changeLanguage(e.target.value);
+
+        
     };
 
     return (
         <>
             {/* Top Navbar */}
             <div className="flex justify-between items-center bg-gray-100 px-4 md:px-8 py-2 shadow-sm text-sm">
-                <div></div> {/* Empty div for spacing */}
+                <div>  
+            <h1 className="font-bold">{data?.data?.name || "Unknown User"}</h1>
+            <button className="bg-button1 rounded-md py-1 px-4"  onClick ={logout}>logout</button>
+            </div>
                 <div className="flex items-center gap-4">
                     <select
                         onChange={handleLanguageChange}
