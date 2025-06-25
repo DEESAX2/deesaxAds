@@ -8,11 +8,8 @@ import { BarLoader } from 'react-spinners';
 import AdvertCard from '../Components/AdvertCard';
 import useSWR from 'swr';
 
-
-const fetcher = (url) => fetch(url).then((res) => res.json());
-
 export default function AdvertList() {
-  const { data, error, isLoading } = useSWR('/api/adverts', fetcher);
+  const { data, error, isLoading } = useSWR('/adverts', apiFetcher);
 
   if (isLoading) return <p>Loading adverts...</p>;
   if (error) return <p className="text-3xl text-center text-red-400 font-bold">Oh Oh! Failed to load adverts.</p>;
@@ -23,7 +20,7 @@ export default function AdvertList() {
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-4">
-     <Navbar />
+      <Navbar />
       {validAdverts.map((ad) => (
         <AdvertCard
           key={ad._id}
