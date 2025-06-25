@@ -13,23 +13,23 @@ export default function AdvertCard({ id, title, description, imageUrl, contact, 
       flex flex-col
       transform transition-transform duration-300 hover:scale-105">
                 <img
-                    src={adverts.imageUrl}
-                    alt={adverts.title}
+                    src={imageUrl}
+                    alt={title}
                     className="w-full h-48 object-cover"
                 />
                 <div className="p-4 flex flex-col flex-grow">
-                    <h3 className="text-xl font-semibold mb-2 text-gray-700">{adverts.title}</h3>
+                    <h3 className="text-xl font-semibold mb-2 text-gray-700">{title}</h3>
                     <p className="text-sm text-gray-600 mb-4 flex-grow line-clamp-3">
-                        {adverts.description}
+                        {description}
                     </p>
 
 
                     <div className="px-4 pb-4">
                         <p className="text-gray-800 text-sm mb-1">
-                            <strong className="font-medium">Contact:</strong> {adverts.contact}
+                            <strong className="font-medium">Contact:</strong> {contact}
                         </p>
                         <p className="text-gray-600 text-lg font-bold">
-                            ₵{adverts.price}
+                            ₵{price}
                         </p>
                     </div>
                 </div>

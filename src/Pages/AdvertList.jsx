@@ -9,7 +9,7 @@ import AdvertCard from '../Components/AdvertCard';
 import useSWR from 'swr';
 
 export default function AdvertList() {
-  const { data, error, isLoading } = useSWR('/adverts', apiFetcher);
+  const { data, error, isLoading } = useSWR('/all/adverts', apiFetcher);
 
   if (isLoading) return <p>Loading adverts...</p>;
   if (error) return <p className="text-3xl text-center text-red-400 font-bold">Oh Oh! Failed to load adverts.</p>;
@@ -21,15 +21,15 @@ export default function AdvertList() {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-4">
       <Navbar />
-      {validAdverts.map((ad) => (
+      {data.map((advert) => (
         <AdvertCard
-          key={ad._id}
-          id={ad._id}
-          title={ad.title}
-          description={ad.description}
-          imageUrl={ad.image}
-          contact={ad.contact}
-          price={ad.price}
+          key={advert.id}
+          id={advert.id}
+          title={advert.title}
+          description={advert.description}
+          imageUrl={advert.image}
+          contact={advert.contact}
+          price={advert.price}
         />
       ))}
       <Footer />

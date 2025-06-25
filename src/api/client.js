@@ -10,10 +10,13 @@ export const apiFetcher = async (url) => {
     const token = localStorage.getItem("token");
     const response = await apiClient.get(url, {
         headers: {
-            "Content-Type": "application/json",
-            ...(token && { Authorization: `Bearer ${token}` }),
+            Authorization: `Bearer ${token}`
         },
-        withCredentials: true,
     });
     return response.data;
 };
+
+
+
+
+
