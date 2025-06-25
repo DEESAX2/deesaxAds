@@ -1,8 +1,35 @@
 import VendorSideBar from "../Components/VendorSideBar";
 import { Link } from "react-router";
+import { apiClient, apiFetcher } from "../api/client";
+import { useSearchParams, useNavigate } from "react-router"
+import { useEffect } from "react";
 
 
 export default function VendorAdvertList() {
+    const navigate = useNavigate();
+    const [searchParams] = useSearchParams();
+    const id = searchParams.get('id');
+
+
+    // const [book, setBook] = useState({});
+
+    const getMyAdverts = () => {
+        apiClient.get(`/my/adverts/`)
+            .then((response) => {
+                console.log(response.data);
+                setAdvert(response.data);
+            })
+            .catch((error) => {
+                console.log(error);
+            })
+    }
+
+    useEffect(() => {
+            getMyAdverts()
+    },[])
+
+
+
     return (
         <>
             <div className="min-h-screen flex bg-gradient-to-br from-indigo-700 via-blue-400 to-indigo-100 font-sans">

@@ -1,8 +1,8 @@
-
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import VendorSideBar from "../Components/VendorSideBar";
 import { apiClient } from "../api/client";
+import { useSearchParams } from "react-router"
 
 
 
@@ -10,21 +10,27 @@ import { apiClient } from "../api/client";
 
 export default function EditAdvert() {
 
+  const [searchParams] = useSearchParams();
+  const id = searchParams.get('id');
+
+
   const patchEdit = async (data) => {
 
-        //Post data to api
-        try {
-            const response = await apiClient.patch(`/${id}`, data, {
-                headers: {
-                    "Content-Type": "application/json",
-                },
-            });
-            console.log(response);
-            navigate(-1); // Navigate back to the previous page
-        } catch (error) {
-            console.log(error);
-        }
-    };
+    //Post data to api
+    try {
+      const response = await apiClient.patch(`/update/${id}`, data, {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem('token')}`
+
+        },
+      });
+      console.log(response);
+      navigate(-1); // Navigate back to the previous page
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
 
 
@@ -39,7 +45,7 @@ export default function EditAdvert() {
                 Update Advert
               </h1>
 
-              <form className="space-y-6">
+              <form action={patchEdit} className="space-y-6">
                 {/* All your input fields remain the same */}
                 <div>
                   <label className="block text-gray-700 font-semibold mb-1" htmlFor="title">Title</label>

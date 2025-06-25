@@ -52,10 +52,13 @@ const RegisterApp = () => {
       };
 
       const response = await apiClient.post("/users/signup", payload, {
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json"
+         },
+
       });
 
       toast.success("Registration successful!");
+      localStorage.setItem("USER_ID", response.data.user.id)
       navigate("/vendor-dashboard");
     } catch (error) {
       const errorMessage =
