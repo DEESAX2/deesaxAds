@@ -1,24 +1,32 @@
-import { useState } from "react";
+
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import VendorSideBar from "../Components/VendorSideBar";
+import { apiClient } from "../api/client";
+
+
+
+
 
 export default function EditAdvert() {
-  const [formSubmitted, setFormSubmitted] = useState(false);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const patchEdit = async (data) => {
 
-    // ✅ Simulated update logic
-    try {
-      setFormSubmitted(true);
-      toast.success("Advert updated successfully!");
-      // Optional: redirect after delay
-      // navigate('/vendor/adverts');
-    } catch (error) {
-      toast.error("Failed to update advert. Try again.");
-    }
-  };
+        //Post data to api
+        try {
+            const response = await apiClient.patch(`/${id}`, data, {
+                headers: {
+                    "Content-Type": "application/json",
+                },
+            });
+            console.log(response);
+            navigate(-1); // Navigate back to the previous page
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
+
 
   return (
     <>
@@ -31,14 +39,7 @@ export default function EditAdvert() {
                 Update Advert
               </h1>
 
-              {/* ✅ Optional inline success message */}
-              {formSubmitted && (
-                <div className="bg-green-100 text-green-700 px-4 py-2 rounded mb-6 text-center font-medium">
-                  Advert updated successfully!
-                </div>
-              )}
-
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form className="space-y-6">
                 {/* All your input fields remain the same */}
                 <div>
                   <label className="block text-gray-700 font-semibold mb-1" htmlFor="title">Title</label>

@@ -2,9 +2,15 @@ import { Link } from "react-router";
 import VendorSideBar from "../Components/VendorSideBar";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
+import { apiClient, apiFetcher } from "../api/client";
+import SWR from "swr";
+
 
 
 export default function VendorDashboard() {
+
+
+
   return (
     <>
       <Navbar />
@@ -82,12 +88,11 @@ export default function VendorDashboard() {
                       Description for advert #{id}
                     </p>
                     <div className="mt-2 flex justify-between text-sm">
-                      <a
-                        href={`/vendor/adverts/${id}/edit`}
+                      <Link to ={`/edit-advert/${id}/edit`}
                         className="text-[var(--color-button1)] hover:underline"
                       >
                         Edit
-                      </a>
+                      </Link>
                       <a
                         href={`/vendor/adverts/${id}/delete`}
                         className="text-red-500 hover:underline"
