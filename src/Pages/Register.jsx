@@ -71,12 +71,16 @@ const RegisterApp = () => {
     
     
     <div className="min-h-screen bg-[#38cca0] flex items-center justify-center p-4">
+      
       <div className="max-w-md w-full bg-white rounded-xl shadow-2xl p-6">
+        <div className="flex items-center justify-center py-2 ">
+           {t('Already have an account? Login')}
+        </div>
         <h1 className="text-2xl font-italic text-center text-white-700 mb-6 bg-gradient-to-r from-button2 to-button3 text-white rounded-lg py-2 ">
           {t("Register for free")}
         </h1>
         <div className="flex items-center justify-center font-bold ">
-           Are you a Vendor or a User?
+           {t('Are you a Vendor or a User?')}
         </div>
 
         <form onSubmit={handleRegister} className="space-y-4">
@@ -90,7 +94,7 @@ const RegisterApp = () => {
                   : "text-gray-600 hover:text-gray-800"
                 }`}
             >
-              Vendor
+              {t('Vendor')}
             </button>
             <button
               type="button"
@@ -100,7 +104,7 @@ const RegisterApp = () => {
                   : "text-gray-600 hover:text-gray-800"
                 }`}
             >
-              User
+              {t('User')}
             </button>
           </div>
           
@@ -108,7 +112,7 @@ const RegisterApp = () => {
           {/* First Name */}
           <div>
             <label htmlFor="firstName" className="text-sm font-medium text-blue-700 mb-1 block">
-              First Name<span className="text-red-500">*</span>
+              {t('First Name')}<span className="text-red-500">*</span>
             </label>
             <input
               type="text"
@@ -124,7 +128,7 @@ const RegisterApp = () => {
           {/* Last Name */}
           <div>
             <label htmlFor="lastName" className="text-sm font-medium text-blue-700 mb-1 block">
-              Last Name<span className="text-red-500">*</span>
+              {t('Last Name')}<span className="text-red-500">*</span>
             </label>
             <input
               type="text"
@@ -140,7 +144,7 @@ const RegisterApp = () => {
           {/* Email */}
           <div>
             <label htmlFor="email" className="text-sm font-medium text-blue-700 mb-1 block">
-              Email<span className="text-red-500">*</span>
+              {t('Email')}<span className="text-red-500">*</span>
             </label>
             <input
               type="email"
@@ -156,7 +160,7 @@ const RegisterApp = () => {
           {/* Password */}
           <div>
             <label htmlFor="password" className="text-sm font-medium text-blue-700 mb-1 block">
-              Password<span className="text-red-500">*</span>
+              {t('Password')}<span className="text-red-500">*</span>
             </label>
             <div className="relative">
               <input
@@ -182,7 +186,7 @@ const RegisterApp = () => {
           {/* Confirm Password */}
           <div>
             <label htmlFor="confirmPassword" className="text-sm font-medium text-blue-700 mb-1 block">
-              Confirm Password<span className="text-red-500">*</span>
+              {t('Confirm Password')}<span className="text-red-500">*</span>
             </label>
             <div className="relative">
               <input
@@ -217,7 +221,7 @@ const RegisterApp = () => {
               required
             />
             <label htmlFor="terms" className="text-sm text-blue-700">
-              I accept the Terms and Conditions and Privacy Policy.
+              {t('I accept the Terms and Conditions and Privacy Policy.')}
             </label>
           </div>
 
@@ -226,7 +230,7 @@ const RegisterApp = () => {
             type="submit"
             className="w-full bg-gradient-to-r from-button2 to-button3 text-white py-3 px-4 rounded-lg font-medium hover:bg-blue-800 transition-all mt-4"
           >
-            Register
+            {t('Register')}
           </button>
         </form>
       </div>

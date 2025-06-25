@@ -13,6 +13,8 @@ import VendorAdvertList from "./Pages/VendorAdvertList";
 import AdvertForm from "./Components/AdvertForm";
 import EditAdvert from "./Pages/EditAdvert";
 import Register from "./Pages/Register";
+import HomeUser from "./Pages/HomeUser";
+import MeetTeam from "./Pages/MeetTeam";
 
 
 const deesaxConnectRouter = createBrowserRouter([
@@ -29,6 +31,9 @@ const deesaxConnectRouter = createBrowserRouter([
   { path: '/edit-advert', element: <EditAdvert /> },
   { path: '*', element: <NotFound /> },
   { path: '/advert-list', element: <AdvertList />},
+  { path: '/home-user', element: <HomeUser/>},
+  { path: '/meet-team', element: <MeetTeam/>},
+  
 ]);
 
 function App() {

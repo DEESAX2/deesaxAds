@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import NavbarNu from "../Components/NavbarNu";
+import Navbar from "../Components/Navbar";
 import herobg from "../assets/Images/herobg.png";
 import videodeesax from "../assets/Videos/videodeesax.mp4";
 import Footer from "../Components/Footer";
@@ -19,6 +19,7 @@ import masseur from "../assets/Images/masseur.jpg";
 import trainer from "../assets/Images/trainer.jpg";
 import { Link } from "react-router";
 import teacher from "../assets/Images/teacher.jpg";
+
 
 export default function Home() {
   const { t } = useTranslation();
@@ -54,8 +55,8 @@ const visibleServices = serviceImages.slice(carouselPage * 3, carouselPage * 3 +
 
   return (
     <>
-      <NavbarNu />
-      <section id="hero">
+      <Navbar />
+      <section>
         <div className="relative w-full h-[350px] md:h-[596px] overflow-hidden flex items-center justify-center">
           {showImage ? (
             <img
