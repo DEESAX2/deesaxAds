@@ -9,7 +9,7 @@ import designer from "../assets/Images/designer.jpg";
 import stylist from "../assets/Images/stylist.jpg";
 import photo1 from "../assets/Images/photo1.jpg";
 import trainer from "../assets/Images/trainer.jpg";
-import AdvertList from "../Components/AdvertList";
+import AdvertList from "./AdvertList";
 import HowItWorks from "../Components/HowItWorks";
 import AdvertSearchFilter from "../Components/AdvertSearchFilter";
 import { useTranslation } from "react-i18next";
