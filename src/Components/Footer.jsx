@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
-import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn, FaWhatsapp } from 'react-icons/fa';
+import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn, FaWhatsapp,FaArrowUp } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
 
 export default function Footer() {
@@ -82,6 +82,12 @@ export default function Footer() {
       <div className="text-center mt-8 text-sm text-gray-400">
         © {new Date().getFullYear()} DeesaxConnect. {t('All rights reserved')}.
       </div>
+     <div className="flex justify-center mt-6">
+        <a href="#hero" title="Back to Top" className="bg-[#38cca0] hover:bg-white text-black p-3 rounded-full shadow-lg transition-transform duration-300 hover:-translate-y-2"><FaArrowUp className="text-xl" />
+        </a>
+      </div>
+
+      
     </footer>
   );
 }

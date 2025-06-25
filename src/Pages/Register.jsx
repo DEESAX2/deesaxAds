@@ -68,7 +68,11 @@ const RegisterApp = () => {
     
     
     <div className="min-h-screen bg-[#38cca0] flex items-center justify-center p-4">
+      
       <div className="max-w-md w-full bg-white rounded-xl shadow-2xl p-6">
+        <div className="flex items-center justify-center py-2 ">
+           {t('Already have an account? Login')}
+        </div>
         <h1 className="text-2xl font-italic text-center text-white-700 mb-6 bg-gradient-to-r from-button2 to-button3 text-white rounded-lg py-2 ">
           {t("Register for free")}
         </h1>
