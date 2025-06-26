@@ -24,6 +24,7 @@ const RegisterApp = () => {
   const [acceptTerms, setAcceptTerms] = useState(false);
 
   const handleInputChange = (e) => {
+   
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
@@ -73,11 +74,24 @@ const RegisterApp = () => {
 }
   };
 
+   const HomeArrow = () => (
+    <a href="/" className="absolute top-6 left-6 group home-arrow-slide-in">
+      <div className="flex items-center space-x-2 text-white hover:text-gray-200 cursor-pointer">
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+        </svg>
+        <span className="absolute left-12 opacity-0 group-hover:opacity-100 text-white text-xs rounded py-1 px-2 transition-opacity">
+          {t('Go to Homepage')}
+        </span>
+      </div>
+    </a>
+  );
+
   return (
     
     
     <div className="min-h-screen bg-[#38cca0] flex items-center justify-center p-4">
-      
+       <HomeArrow />
       <div className="max-w-md w-full bg-white rounded-xl shadow-2xl p-6">
         <div className="flex items-center justify-center py-2 ">
            {t('Already have an account? Login')}
