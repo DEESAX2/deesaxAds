@@ -99,7 +99,7 @@ export default function Navbar() {
                         <Link to="/" className="text-gray-800 hover:text-button3 font-semibold">{t('Home')}</Link>
                         <a href="#about" className="text-gray-800 hover:text-button3 font-semibold">{t('About')}</a>
                         <a href="#footer" className="text-gray-800 hover:text-button3 font-semibold">{t('Contact')}</a>
-                        <Link to="/advert-list " className="text-gray-800 hover:text-button3 font-semibold">{t('All Ads')}</Link>
+                        <Link to="/meet-team" className="text-gray-800 hover:text-button3 font-semibold">{t('Our Team')}</Link>
                     </div>
                 )}
             </nav>
