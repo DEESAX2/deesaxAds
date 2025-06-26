@@ -7,6 +7,7 @@ import { apiFetcher } from '../api/client';
 import { BarLoader } from 'react-spinners';
 import AdvertCard from '../Components/AdvertCard';
 import useSWR from 'swr';
+import AdvertSearchFilter from '../Components/AdvertSearchFilter';  
 
 export default function AdvertList() {
   const { data, error, isLoading } = useSWR('/all/adverts', apiFetcher);
@@ -21,6 +22,7 @@ export default function AdvertList() {
   return (
     <section>
       <Navbar />
+      <AdvertSearchFilter />
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-4">
       {data.map((advert) => (
         <AdvertCard

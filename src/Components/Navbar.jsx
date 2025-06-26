@@ -10,13 +10,15 @@ import { useNavigate } from "react-router";
 
 export default function Navbar() {
     const navigate = useNavigate();
-    const {data} = useSWR("/users/profile", apiFetcher);
+    // Used to Fetch SWR for vendor dashboard info
+    const { data, error, isLoading } = useSWR("/dashboard/my/dashboard", apiFetcher);
+    // console.log("Vendor dashboard data:", data);
 
-const logout = () => {
+   const logout = () => {
     localStorage.removeItem("token");
-
     navigate("/login");
-}
+    window.location.reload(); // This will clear all in-memory state and SWR cache
+};
     const { t } = useTranslation();
     const [selectedCategory, setSelectedCategory] = useState("");
     const [menuOpen, setMenuOpen] = useState(false);
@@ -31,10 +33,12 @@ const logout = () => {
         <>
             {/* Top Navbar */}
             <div className="flex justify-between items-center bg-gray-100 px-4 md:px-8 py-2 shadow-sm text-sm">
-                <div>  
-            <h1 className="font-bold">{data?.data?.name || "Unknown User"}</h1>
-            <button className="bg-button1 rounded-md py-1 px-4"  onClick ={logout}>logout</button>
-            </div>
+             <div className="flex items-center gap-4">
+                        <h1 className="font-weight-light">
+                            {isLoading? t("Loading...") : error? t("Unknown User") : data?.vendor?.name ? data.vendor.name: t("Unknown User")}
+                        </h1>
+                        <button className="bg-button1 rounded-md py-1 px-4" onClick={logout}>logout</button>
+                    </div>
                 <div className="flex items-center gap-4">
                     <select
                         onChange={handleLanguageChange}
@@ -57,7 +61,7 @@ const logout = () => {
             <nav className="bg-white shadow-md px-4 md:px-8 py-3 flex justify-between items-center relative z-50 h-16">
                 {/* Logo */}
                 <div className="flex items-center justify-between w-full md:w-auto">
-                    <Link to="/">
+                    <Link to="/home-user">
                         <img src={DeesaxConnect} alt="Logo" className="w-36 md:w-44 h-auto" />
                     </Link>
                     <button
@@ -72,10 +76,11 @@ const logout = () => {
                 <div className="hidden md:flex items-center gap-6 w-full justify-end">
                    
                     {/* Links */}
-                    <Link to="/" className="text-gray-800 hover:text-button3 font-semibold">{t('Home')}</Link>
+                    <Link to="/home-user" className="text-gray-800 hover:text-button3 font-semibold">{t('Home')}</Link>
                     <a href="#about" className="text-gray-800 hover:text-button3 font-semibold">{t('About')}</a>
                     <a href="#footer" className="text-gray-800 hover:text-button3 font-semibold">{t('Contact')}</a>
                     <Link to="/advert-list" className="text-gray-800 hover:text-button3 font-semibold">{t('All Ads')}</Link>
+                     <Link to="/vendor-dashboard" className="text-gray-800 hover:text-button3 font-semibold">{t('Dashboard')}</Link>
                 </div>
 
                 {/* Mobile Menu */}
