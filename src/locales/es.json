@@ -35,10 +35,10 @@
   "Products": "Productos",
   "Fashion": "Moda",
   "Tech Gadgets": "Dispositivos tecnológicos",
-  "Food Items": "Artículos alimenticios",
+  "Catering": "Servicios de catering",
   "Support": "Soporte",
   "Help & Support": "Ayuda y soporte",
-  "FAQ DeesaxAd": "Preguntas frecuentes DeesaxAd",
+  "FAQ DeesaxConnect": "Preguntas frecuentes DeesaxConnect",
   "Privacy Policy": "Política de privacidad",
   "Follow Us": "Síguenos",
   "Subscribe to our email": "Suscríbete a nuestro correo",
@@ -54,7 +54,8 @@
   "Oops!": "¡Vaya!",
   "The page you are looking for does not exist.": "La página que buscas no existe.",
   "Go back to Home": "Volver al inicio",
-  "Welcome to Deesax Connect": "Bienvenido a Deesax Connect",
+  "About DeesaxConnect": "Acerca de DeesaxConnect",
+  "Welcome to DeesaxConnect": "Bienvenido a DeesaxConnect",
   "Your one-stop platform for connecting with skilled professionals across various fields.": "Tu plataforma integral para conectar con profesionales calificados en diversos campos.",
   "DeesaxConnect is a one-stop platform where people can post their services and find trusted professionals across various fields. Whether you're offering a skill or looking for one, we make it easy to connect, collaborate, and get things done. From creatives to consultants, artisans to tech experts — DeesaxConnect is where services meet opportunity.": "DeesaxConnect es una plataforma integral donde las personas pueden publicar sus servicios y encontrar profesionales de confianza en diversos campos. Ya sea que ofrezcas una habilidad o estés buscando una, facilitamos la conexión, la colaboración y la realización de tareas. Desde creativos hasta consultores, artesanos y expertos en tecnología — DeesaxConnect es donde los servicios encuentran oportunidades.",
   "Get Started": "Empezar",
@@ -69,5 +70,6 @@
   "Connect & Hire": "Conectar y contratar",
   "Review provider profiles, compare offers, and choose the best fit. Contact and negotiate directly.": "Revisa los perfiles de los proveedores, compara ofertas y elige la mejor opción. Contacta y negocia directamente.",
   "Get the Job Done": "Realiza el trabajo",
-  "Work seamlessly with trusted professionals and get quality results delivered on time.": "Trabaja sin problemas con profesionales de confianza y obtén resultados de calidad entregados a tiempo."
+  "Work seamlessly with trusted professionals and get quality results delivered on time.": "Trabaja sin problemas con profesionales de confianza y obtén resultados de calidad entregados a tiempo.",
+  "Sign in to get access to a list of services available such as these ones and find what you need": "Inicia sesión para acceder a una lista de servicios disponibles como estos y encontrar lo que necesitas"
 }
