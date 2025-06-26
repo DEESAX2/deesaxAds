@@ -19,7 +19,6 @@ import masseur from "../assets/Images/masseur.jpg";
 import trainer from "../assets/Images/trainer.jpg";
 import { Link } from "react-router";
 import teacher from "../assets/Images/teacher.jpg";
-import connect from "../assets/Videos/connect.mp4";
 
 
 export default function Home() {
@@ -141,16 +140,17 @@ const visibleServices = serviceImages.slice(carouselPage * 3, carouselPage * 3 +
   </div>
   </section>
 
-   {/* video play */}
+   
+{/* video play */}
 <section className="flex justify-center items-center py-10 bg-white">
-  <div className="relative w-full max-w-4xl aspect-video overflow-hidden shadow-lg">
-    <video
-      src={connect}
-      controls
-      className="w-full h-full object-cover"
-
-    />
-    
+  <div className="relative w-full max-w-4xl aspect-video overflow-hidden shadow-lg rounded-lg">
+    <iframe
+  src="https://www.youtube.com/embed/f1_zb_4xHA4"
+  title="DeesaxConnect Video"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowFullScreen
+  className="w-full h-full"
+></iframe>
   </div>
 </section>
 

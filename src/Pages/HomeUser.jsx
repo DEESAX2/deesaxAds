@@ -89,7 +89,7 @@ export default function Home() {
               {t("DeesaxConnect is a one-stop platform where people can post their services and find trusted professionals across various fields. Whether you're offering a skill or looking for one, we make it easy to connect, collaborate, and get things done. From creatives to consultants, artisans to tech experts — DeesaxConnect is where services meet opportunity.")}
             </p>
             <button className="mt-6 bg-gradient-to-r from-button2 to-button3 text-white font-semibold py-2 px-4 rounded-full shadow-lg hover:from-special hover:to-button1 transition duration-300 ease-in-out">
-              <Link to="/register">{t('Get Started')}</Link>
+              <Link to="/advert-list">{t('Get Started')}</Link>
             </button>
           </div>
           <div className="flex-1 p-4 md:p-8">
@@ -106,7 +106,7 @@ export default function Home() {
       <section className="w-full bg-gray-50 py-10 overflow-hidden">
         <div className="max-w-6xl mx-auto px-4 md:px-8">
           <h2 className="text-center text-2xl md:text-lg mb-6 bg-gradient-to-r from-special to-button1 bg-amber-200 rounded-lg shadow-md py-2 text-black font-weight-light">
-            {t("Sign in to get access to a list of services available such as these ones and find what you need")}
+            {t("Great! You're signedin, Click on the get started button to get all services available such as these ones")}
           </h2>
         </div>
         <div className="relative w-full overflow-hidden">
@@ -146,10 +146,18 @@ export default function Home() {
         </style>
       </section>
 
-      <section>
-        <embed src="" type="" />
-      </section>
-
+      {/* video play */}
+<section className="flex justify-center items-center py-10 bg-white">
+  <div className="relative w-full max-w-4xl aspect-video overflow-hidden shadow-lg rounded-lg">
+    <iframe
+  src="https://www.youtube.com/embed/f1_zb_4xHA4"
+  title="DeesaxConnect Video"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowFullScreen
+  className="w-full h-full"
+></iframe>
+  </div>
+</section>
       <section className="bg-button1">
         <HowItWorks />
       </section>
