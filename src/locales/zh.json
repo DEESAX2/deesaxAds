@@ -54,6 +54,7 @@
   "Oops!": "哎呀！",
   "The page you are looking for does not exist.": "您正在寻找的页面不存在。",
   "Go back to Home": "返回首页",
+  "About DeesaxConnect": "关于 DeesaxConnect",
   "Welcome to Deesax Connect": "欢迎来到 Deesax Connect",
   "Your one-stop platform for connecting with skilled professionals across various fields.": "您的一站式平台，连接各领域的专业人才。",
   "DeesaxConnect is a one-stop platform where people can post their services and find trusted professionals across various fields. Whether you're offering a skill or looking for one, we make it easy to connect, collaborate, and get things done. From creatives to consultants, artisans to tech experts — DeesaxConnect is where services meet opportunity.": "DeesaxConnect 是一个一站式平台，用户可以发布服务并找到各领域值得信赖的专业人士。无论您是提供技能还是寻找技能，我们都让连接、合作和完成任务变得更加简单。从创意工作者到顾问，从工匠到技术专家 — DeesaxConnect 是服务与机会的交汇点。",
@@ -72,5 +73,15 @@
   "Connect & Hire": "连接与雇佣",
   "Review provider profiles, compare offers, and choose the best fit. Contact and negotiate directly.": "查看服务提供者的个人资料，比较报价，并选择最合适的。直接联系并进行协商。",
   "Get the Job Done": "完成工作",
-  "Work seamlessly with trusted professionals and get quality results delivered on time.": "与值得信赖的专业人士无缝合作，按时交付高质量成果。"
+  "Work seamlessly with trusted professionals and get quality results delivered on time.": "与值得信赖的专业人士无缝合作，按时交付高质量成果。",
+   "Catering": "餐饮服务",
+  "Address": "地址",
+  "Connect with us!": "与我们联系！",
+  "I accept the Terms and Conditions and Privacy Policy.": "我接受条款和条件以及隐私政策。",
+  "User": "用户",
+   "First Name": "名字",
+  "Last Name": "姓氏",
+  "Are you a Vendor or a User?": "您是供应商还是用户？",
+  "Already have an account? Login": "已经有账号？登录"
+  
 }

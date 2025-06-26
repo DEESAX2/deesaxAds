@@ -1,24 +1,38 @@
-import { useState } from "react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import VendorSideBar from "../Components/VendorSideBar";
+import { apiClient } from "../api/client";
+import { useSearchParams } from "react-router"
+
+
+
+
 
 export default function EditAdvert() {
-  const [formSubmitted, setFormSubmitted] = useState(false);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const [searchParams] = useSearchParams();
+  const id = searchParams.get('id');
 
-    // ✅ Simulated update logic
+
+  const patchEdit = async (data) => {
+
+    //Post data to api
     try {
-      setFormSubmitted(true);
-      toast.success("Advert updated successfully!");
-      // Optional: redirect after delay
-      // navigate('/vendor/adverts');
+      const response = await apiClient.patch(`/update/${id}`, data, {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem('token')}`
+
+        },
+      });
+      console.log(response);
+      navigate(-1); // Navigate back to the previous page
     } catch (error) {
-      toast.error("Failed to update advert. Try again.");
+      console.log(error);
     }
   };
+
+
 
   return (
     <>
@@ -31,14 +45,7 @@ export default function EditAdvert() {
                 Update Advert
               </h1>
 
-              {/* ✅ Optional inline success message */}
-              {formSubmitted && (
-                <div className="bg-green-100 text-green-700 px-4 py-2 rounded mb-6 text-center font-medium">
-                  Advert updated successfully!
-                </div>
-              )}
-
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form action={patchEdit} className="space-y-6">
                 {/* All your input fields remain the same */}
                 <div>
                   <label className="block text-gray-700 font-semibold mb-1" htmlFor="title">Title</label>

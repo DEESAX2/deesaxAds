@@ -16,7 +16,7 @@ const RegisterApp = () => {
     email: "",
     password: "",
     confirmPassword: "",
-    role: "customer", // Default to "customer" (not "user")
+    role: "customer",
   });
 
   const [showPassword, setShowPassword] = useState(false);
@@ -42,21 +42,23 @@ const RegisterApp = () => {
     }
 
     try {
-      // Send as JSON, not FormData
       const payload = {
         firstName: formData.firstName,
         lastName: formData.lastName,
         email: formData.email,
         password: formData.password,
         confirmPassword: formData.confirmPassword,
-        role: formData.role, // Will be "vendor" or "customer"
+        role: formData.role,
       };
 
       const response = await apiClient.post("/users/signup", payload, {
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json"
+         },
+
       });
 
       toast.success("Registration successful!");
+      localStorage.setItem("USER_ID", response.data.user.id)
       navigate("/vendor-dashboard");
     } catch (error) {
       const errorMessage =
@@ -66,15 +68,24 @@ const RegisterApp = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 flex items-center justify-center p-4">
-      <div className="max-w-md w-full bg-white rounded-2xl shadow-2xl p-6">
-        <h1 className="text-2xl font-bold text-center text-blue-700 mb-6">
+    
+    
+    <div className="min-h-screen bg-[#38cca0] flex items-center justify-center p-4">
+      
+      <div className="max-w-md w-full bg-white rounded-xl shadow-2xl p-6">
+        <div className="flex items-center justify-center py-2 ">
+           {t('Already have an account? Login')}
+        </div>
+        <h1 className="text-2xl font-italic text-center text-white-700 mb-6 bg-gradient-to-r from-button2 to-button3 text-white rounded-lg py-2 ">
           {t("Register for free")}
         </h1>
+        <div className="flex items-center justify-center font-bold ">
+           {t('Are you a Vendor or a User?')}
+        </div>
 
         <form onSubmit={handleRegister} className="space-y-4">
           {/* Role Selection */}
-          <div className="flex justify-between bg-gray-50 rounded-lg p-1">
+          <div className="flex justify-between bg-gray-50 rounded-lg p-1 mt-2.5">
             <button
               type="button"
               onClick={() => setFormData((prev) => ({ ...prev, role: "vendor" }))}
@@ -83,7 +94,7 @@ const RegisterApp = () => {
                   : "text-gray-600 hover:text-gray-800"
                 }`}
             >
-              Vendor
+              {t('Vendor')}
             </button>
             <button
               type="button"
@@ -93,14 +104,15 @@ const RegisterApp = () => {
                   : "text-gray-600 hover:text-gray-800"
                 }`}
             >
-              User
+              {t('User')}
             </button>
           </div>
+          
 
           {/* First Name */}
           <div>
             <label htmlFor="firstName" className="text-sm font-medium text-blue-700 mb-1 block">
-              First Name<span className="text-red-500">*</span>
+              {t('First Name')}<span className="text-red-500">*</span>
             </label>
             <input
               type="text"
@@ -116,7 +128,7 @@ const RegisterApp = () => {
           {/* Last Name */}
           <div>
             <label htmlFor="lastName" className="text-sm font-medium text-blue-700 mb-1 block">
-              Last Name<span className="text-red-500">*</span>
+              {t('Last Name')}<span className="text-red-500">*</span>
             </label>
             <input
               type="text"
@@ -132,7 +144,7 @@ const RegisterApp = () => {
           {/* Email */}
           <div>
             <label htmlFor="email" className="text-sm font-medium text-blue-700 mb-1 block">
-              Email<span className="text-red-500">*</span>
+              {t('Email')}<span className="text-red-500">*</span>
             </label>
             <input
               type="email"
@@ -148,7 +160,7 @@ const RegisterApp = () => {
           {/* Password */}
           <div>
             <label htmlFor="password" className="text-sm font-medium text-blue-700 mb-1 block">
-              Password<span className="text-red-500">*</span>
+              {t('Password')}<span className="text-red-500">*</span>
             </label>
             <div className="relative">
               <input
@@ -174,7 +186,7 @@ const RegisterApp = () => {
           {/* Confirm Password */}
           <div>
             <label htmlFor="confirmPassword" className="text-sm font-medium text-blue-700 mb-1 block">
-              Confirm Password<span className="text-red-500">*</span>
+              {t('Confirm Password')}<span className="text-red-500">*</span>
             </label>
             <div className="relative">
               <input
@@ -209,20 +221,21 @@ const RegisterApp = () => {
               required
             />
             <label htmlFor="terms" className="text-sm text-blue-700">
-              I accept the Terms and Conditions and Privacy Policy.
+              {t('I accept the Terms and Conditions and Privacy Policy.')}
             </label>
           </div>
 
           {/* Submit */}
           <button
             type="submit"
-            className="w-full bg-blue-700 text-white py-3 px-4 rounded-lg font-medium hover:bg-blue-800 transition-all mt-4"
+            className="w-full bg-gradient-to-r from-button2 to-button3 text-white py-3 px-4 rounded-lg font-medium hover:bg-blue-800 transition-all mt-4"
           >
-            Register
+            {t('Register')}
           </button>
         </form>
       </div>
     </div>
+     
   );
 };
 

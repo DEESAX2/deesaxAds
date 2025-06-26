@@ -54,7 +54,8 @@
   "Oops!": "Hoppla!",
   "The page you are looking for does not exist.": "Die gesuchte Seite existiert nicht.",
   "Go back to Home": "Zurück zur Startseite",
-  "Welcome to Deesax Connect": "Willkommen bei Deesax Connect",
+  "About DeesaxConnect": "Über DeesaxConnect",
+  "Welcome to DeesaxConnect": "Willkommen bei DeesaxConnect",
   "Your one-stop platform for connecting with skilled professionals across various fields.": "Ihre All-in-One-Plattform zur Verbindung mit qualifizierten Fachkräften aus verschiedenen Bereichen.",
   "DeesaxConnect is a one-stop platform where people can post their services and find trusted professionals across various fields. Whether you're offering a skill or looking for one, we make it easy to connect, collaborate, and get things done. From creatives to consultants, artisans to tech experts — DeesaxConnect is where services meet opportunity.": "DeesaxConnect ist eine All-in-One-Plattform, auf der Menschen ihre Dienstleistungen veröffentlichen und vertrauenswürdige Fachkräfte in verschiedenen Bereichen finden können. Egal, ob Sie eine Fähigkeit anbieten oder eine suchen – wir erleichtern es, sich zu vernetzen, zusammenzuarbeiten und Projekte erfolgreich abzuschließen. Von Kreativen bis hin zu Beratern, von Handwerkern bis zu Technologieexperten – DeesaxConnect ist der Ort, an dem sich Dienstleistungen und Chancen treffen.",
   "Get Started": "Loslegen",
@@ -70,7 +71,19 @@
   "Connect & Hire": "Verbinden & Einstellen",
   "Review provider profiles, compare offers, and choose the best fit. Contact and negotiate directly.": "Überprüfen Sie die Profile der Anbieter, vergleichen Sie Angebote und wählen Sie die beste Option. Kontaktieren und verhandeln Sie direkt.",
   "Get the Job Done": "Arbeiten Sie an der Aufgabe",
-  "Work seamlessly with trusted professionals and get quality results delivered on time.": "Arbeiten Sie nahtlos mit vertrauenswürdigen Fachleuten zusammen und erhalten Sie qualitativ hochwertige Ergebnisse pünktlich geliefert."
+  "Work seamlessly with trusted professionals and get quality results delivered on time.": "Arbeiten Sie nahtlos mit vertrauenswürdigen Fachleuten zusammen und erhalten Sie qualitativ hochwertige Ergebnisse pünktlich geliefert.",
+   "Catering": "Catering",
+  "Address": "Adresse",
+  "Connect with us!": "Verbinde dich mit uns!",
+  "Are you a Vendor or a User?": "Bist du ein Anbieter oder ein Nutzer?",
+  "I accept the Terms and Conditions and Privacy Policy.": "Ich akzeptiere die Allgemeinen Geschäftsbedingungen und die Datenschutzrichtlinie.",
+  "User": "Nutzer",
+   "First Name": "Vorname",
+   "Last Name": "Nachname",
+    "Already have an account? Login": "Du hast bereits ein Konto? Einloggen"
+
+   
+
   
 
 

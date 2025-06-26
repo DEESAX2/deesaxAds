@@ -1,20 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router';
-import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn, FaWhatsapp } from 'react-icons/fa';
+import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn, FaWhatsapp,FaArrowUp } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
 
 export default function Footer() {
   const { t } = useTranslation();
 
   return (
-    <footer className="bg-[#1E2939] text-white py-8">
+    <footer className="bg-[#364148] text-white py-8">
       <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-5 gap-8">
         {/* About Section */}
         <div>
           <h4 className="font-bold mb-4">{t('About')}</h4>
           <ul>
             <li className="mb-2"><Link to="/notfound" className="hover:underline">{t('Our Story')}</Link></li>
-            {/* <li className="mb-2"><Link to="/notfound" className="hover:underline">{t('Contact Us')}</Link></li> */}
+            
             <li className="mb-2"><Link to="/notfound" className="hover:underline">{t('Terms & Conditions')}</Link></li>
           </ul>
         </div>
@@ -24,8 +24,8 @@ export default function Footer() {
           <h4 className="font-bold mb-4">{t('Support')}</h4>
           <ul>
             <li className="mb-2"><Link to="/notfound" className="hover:underline">{t('Help & Support')}</Link></li>
-            <li className="mb-2"><Link to="/notfound" className="hover:underline">{t('FAQ DeesaxAd')}</Link></li>
-            {/* <li className="mb-2"><Link to="/notfound" className="hover:underline">{t('Contact Us')}</Link></li> */}
+            <li className="mb-2"><Link to="/notfound" className="hover:underline">{t('FAQ DeesaxConnect')}</Link></li>
+            
             <li className="mb-2"><Link to="/notfound" className="hover:underline">{t('Privacy Policy')}</Link></li>
           </ul>
         </div>
@@ -36,7 +36,7 @@ export default function Footer() {
           <ul>
             <li className="mb-2"><Link to="/notfound" className="hover:underline">{t('Fashion')}</Link></li>
             <li className="mb-2"><Link to="/notfound" className="hover:underline">{t('Tech Gadgets')}</Link></li>
-            <li className="mb-2"><Link to="/notfound" className="hover:underline">{t('Food Items')}</Link></li>
+            <li className="mb-2"><Link to="/notfound" className="hover:underline">{t('Catering')}</Link></li>
           </ul>
         </div>
 
@@ -57,11 +57,11 @@ export default function Footer() {
         <div>
           <h4 className="font-bold mb-4">{t('Follow Us')}</h4>
           <div className="flex space-x-4 text-2xl">
-            <a href="https://www.facebook.com/esther-manor" className="hover:text-blue-400"><FaFacebookF /></a>
-            <a href="https://www.instagram.com/i_am_duchess6?igsh=a3U5ZHRrM2s1ZnNx&utm_source=qr" className="hover:text-pink-400"><FaInstagram /></a>
-            <a href="https://x.com/gitoataop?s=21" className="hover:text-blue-300"><FaTwitter /></a>
-            <a href="https://www.linkedin.com/in/sandra-allotey-1266942a5?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" className="hover:text-blue-500"><FaLinkedinIn /></a>
-            <a href="https://wa.me/0548311401" className="hover:text-green-500"><FaWhatsapp /></a>
+            <a href="https://www.facebook.com/esther-manor" className="text-blue-400 hover:text-white"><FaFacebookF /></a>
+            <a href="https://www.instagram.com/i_am_duchess6?igsh=a3U5ZHRrM2s1ZnNx&utm_source=qr" className="text-pink-400 hover:text-white"><FaInstagram /></a>
+            <a href="https://x.com/gitoataop?s=21" className="text-blue-300 hover:text-white"><FaTwitter /></a>
+            <a href="https://www.linkedin.com/in/sandra-allotey-1266942a5?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" className="text-blue-500 hover:text-white"><FaLinkedinIn /></a>
+            <a href="https://wa.me/0548311401" className="text-green-500 hover:text-white"><FaWhatsapp /></a>
           </div>
 
           <h4 className="font-bold  px-1 mt-10">{t('Subscribe to our email')}</h4>
@@ -71,7 +71,7 @@ export default function Footer() {
               placeholder={t('Enter your email')}
               className='border px-3 py-2 rounded-l text-white outline-none'
             />
-            <button className='bg-blue-500 text-black px-2 py-2  rounded-r hover:bg-blue-600'>
+            <button className='bg-[#38cca0] text-black px-2 py-2  rounded-r hover:bg-blue-600'>
               {t('Send')}
             </button>
           </div>
@@ -82,6 +82,12 @@ export default function Footer() {
       <div className="text-center mt-8 text-sm text-gray-400">
         © {new Date().getFullYear()} DeesaxConnect. {t('All rights reserved')}.
       </div>
+     <div className="flex justify-center mt-6">
+        <a href="#hero" title="Back to Top" className="bg-[#38cca0] hover:bg-white text-black p-3 rounded-full shadow-lg transition-transform duration-300 hover:-translate-y-2"><FaArrowUp className="text-xl" />
+        </a>
+      </div>
+
+      
     </footer>
   );
 }
