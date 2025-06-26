@@ -25,6 +25,7 @@
   "You accept our Terms and Conditions and Privacy Policy": "您接受我们的条款和条件以及隐私政策",
   "Login to your account": "登录您的账户",
   "Register now": "立即注册",
+  "logout": "登出",
   "Our Story": "我们的故事",
   "Contact Us": "联系我们",
   "Terms & Conditions": "条款和条件",
@@ -82,6 +83,8 @@
    "First Name": "名字",
   "Last Name": "姓氏",
   "Are you a Vendor or a User?": "您是供应商还是用户？",
-  "Already have an account? Login": "已经有账号？登录"
+  "Already have an account? Login": "已经有账号？登录",
+  "Sign in to get access to a list of services available such as these ones and find what you need": "登录以访问可用服务列表，例如这些，并找到您所需的服务",
+  "Great! You're signedin, Click on the get started button to get all services available such as these ones": "太好了！您已登录，点击开始按钮以获取所有可用服务，例如这些"
   
 }

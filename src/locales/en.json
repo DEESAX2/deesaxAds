@@ -80,9 +80,10 @@
   "user": "User",
    "first name": "First Name",
   "last name": "Last Name",
-  "Already have an account? Login": "Already have an account? Login"
-  
-  
+  "logout": "Logout",
+  "Already have an account? Login": "Already have an account? Login",
+  "Sign in to get access to a list of services available such as these ones and find what you need": "Sign in to get access to a list of services available such as these ones and find what you need",
+  "Great! You're signedin, Click on the get started button to get all services available such as these ones": "Great! You're signed in, Click on the get started button to get all services available such as these ones"
   }
 
 

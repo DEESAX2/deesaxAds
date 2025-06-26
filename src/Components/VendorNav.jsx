@@ -38,7 +38,7 @@ export default function Navbar() {
                         <h1 className="font-weight-light">
                             {isLoading? t("Loading...") : error? t("Unknown User") : data?.vendor?.name ? data.vendor.name: t("Unknown User")}
                         </h1>
-                        <button className="bg-button1 rounded-md py-1 px-4" onClick={logout}>logout</button>
+                        <button className="bg-button1 rounded-md py-1 px-4" onClick={logout}>{t("logout")}</button>
                     </div>
                     <button
                         className="md:hidden text-button3"

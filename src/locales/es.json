@@ -79,6 +79,9 @@
   "Connect with us!": "¡Conéctate con nosotros!",
     "Address": "Dirección",
     "User": "Usuario",
-    "Already have an account? Login": "¿Ya tienes una cuenta? Iniciar sesión"
+    "logout": "Cerrar sesión",
+    "Already have an account? Login": "¿Ya tienes una cuenta? Iniciar sesión",
+    "Sign in to get access to a list of services available such as these ones and find what you need": "Inicia sesión para acceder a una lista de servicios disponibles como estos y encontrar lo que necesitas",
+    "Great! You're signedin, Click on the get started button to get all services available such as these ones": "¡Genial! Has iniciado sesión, haz clic en el botón de comenzar para obtener todos los servicios disponibles como estos"
 
 }

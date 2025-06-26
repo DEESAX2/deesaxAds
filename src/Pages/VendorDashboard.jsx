@@ -1,6 +1,6 @@
 import { Link } from "react-router";
 import VendorSideBar from "../Components/VendorSideBar";
-import Navbar from "../Components/Navbar";
+import VendorNav from "../Components/VendorNav";
 import Footer from "../Components/Footer";
 import { apiClient } from "../api/client";
 import useSWR, { mutate } from "swr";
@@ -79,7 +79,7 @@ export default function VendorDashboard() {
 
   return (
     <>
-      <Navbar />
+      <VendorNav />
       <div className="min-h-screen flex bg-gradient-to-br from-[var(--color-nav)] to-[var(--color-light)]">
         <VendorSideBar />
         <main className="flex-1 max-w-6xl mx-auto p-6 bg-white/80 shadow-xl border">
