@@ -2,7 +2,7 @@ import React from 'react';
 import { useTranslation } from "react-i18next";
 import des from "../assets/Images/team/des.jpg"; 
 import earl from "../assets/Images/team/earl.jpeg";
-import Hero2 from "../assets/Images/team/hero2.jpeg";
+import Hero2 from "../assets/Images/team/Hero2.jpeg";
 import sandra from "../assets/Images/team/sandra.jpeg";
 import alexis from "../assets/Images/team/alexis.jpeg";
 import teach from "../assets/Images/team/teach.jpg";
