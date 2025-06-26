@@ -43,10 +43,11 @@ const LoginApp = () => {
         }
       );
 
+      
       localStorage.setItem("token", response.data.token);
 
       toast.success("Login successful!");
-      navigate("/");
+      navigate("/home-user");
     } catch (error) {
       console.error(error);
       const message =

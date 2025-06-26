@@ -42,26 +42,32 @@ const RegisterApp = () => {
     }
 
     try {
-      const payload = {
-        firstName: formData.firstName,
-        lastName: formData.lastName,
-        email: formData.email,
-        password: formData.password,
-        confirmPassword: formData.confirmPassword,
-        role: formData.role,
-      };
+  const payload = {
+    firstName: formData.firstName,
+    lastName: formData.lastName,
+    email: formData.email,
+    password: formData.password,
+    confirmPassword: formData.confirmPassword,
+    role: formData.role,
+  };
 
-      const response = await apiClient.post("/users/signup", payload, {
-        headers: { "Content-Type": "application/json" },
-      });
+  const response = await apiClient.post("/users/signup", payload, {
+    headers: { "Content-Type": "application/json" },
+  });
 
-      toast.success("Registration successful!");
-      navigate("/vendor-dashboard");
-    } catch (error) {
-      const errorMessage =
-        error.response?.data?.message || "Registration failed due to server error.";
-      toast.error(errorMessage);
-    }
+  toast.success("Registration successful!");
+  if (formData.role === "vendor") {
+    navigate("/vendor-dashboard");
+  } else if (formData.role === "customer") {
+    navigate("/home-user");
+  } else {
+    navigate("/");
+  }
+} catch (error) {
+  const errorMessage =
+    error.response?.data?.message || "Registration failed due to server error.";
+  toast.error(errorMessage);
+}
   };
 
   return (
@@ -225,7 +231,7 @@ const RegisterApp = () => {
           {/* Submit */}
           <button
             type="submit"
-            className="w-full bg-gradient-to-r from-button2 to-button3 text-white py-3 px-4 rounded-lg font-medium hover:bg-blue-800 transition-all mt-4"
+            className="w-full bg-gradient-to-r from-button2 to-button3 text-white py-3 px-4 rounded-lg font-medium hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all transform hover:scale-[1.02] active:scale-[0.98]"
           >
             {t('Register')}
           </button>
