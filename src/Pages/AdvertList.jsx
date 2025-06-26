@@ -19,8 +19,9 @@ export default function AdvertList() {
   const validAdverts = data.filter(ad => new Date(ad.endDate) >= today);
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-4">
+    <section>
       <Navbar />
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-4">
       {data.map((advert) => (
         <AdvertCard
           key={advert.id}
@@ -32,8 +33,9 @@ export default function AdvertList() {
           price={advert.price}
         />
       ))}
-      <Footer />
     </div>
+    <Footer />
+    </section>
   );
 }
 
