@@ -140,7 +140,7 @@ export default function VendorDashboard() {
                       {advert.description || "No description"}
                     </p>
                     <div className="mt-2 flex justify-between text-sm">
-                      <Link to={`/edit-advert/${advert.id}`} className="text-[var(--color-button1)] hover:underline">
+                      <Link to={`/edit-advert?id=${advert.id}`} className="text-[var(--color-button1)] hover:underline">
                         Edit
                       </Link>
                       <button
