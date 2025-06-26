@@ -68,7 +68,7 @@ export default function VendorAdvertList() {
     };
 
     return (
-        <div className="min-h-screen flex bg-gradient-to-br from-indigo-700 via-blue-400 to-indigo-100 font-sans">
+        <div className="min-h-screen flex bg-gradient-to-br from-button1 to-white font-sans">
             <VendorSideBar />
             <section className="max-w-5xl mx-auto p-6 min-h-screen">
                 <h2 className="text-3xl font-extrabold mb-8 text-blue-700 text-center drop-shadow">My Adverts</h2>

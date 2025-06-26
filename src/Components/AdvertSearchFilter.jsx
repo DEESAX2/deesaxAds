@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-// Helper to highlight matches
+// It  highlights matches
 function highlightMatch(text, query) {
   if (!query) return text;
   const regex = new RegExp(`(${query})`, "gi");
@@ -84,7 +84,7 @@ export default function FilterSearch() {
         </button>
       </form>
 
-      {/* Results */}
+     
       <div className="mt-8">
         {results.length === 0 ? (
           <p className="text-gray-500 text-center">No results found.</p>

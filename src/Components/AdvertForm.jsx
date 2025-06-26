@@ -21,7 +21,7 @@ export default function AdvertForm() {
         } catch (error) {
             console.log(error);
         }
-        
+
     }
 
 
@@ -138,22 +138,7 @@ export default function AdvertForm() {
                                 />
                             </div>
 
-                            {/* <div>
-                                <label className="inline-flex items-center">
-                                    <input
-                                        type="checkbox"
-                                        name="terms"
-                                        required
-                                        className="form-checkbox h-5 w-5 text-indigo-600"
-                                    />
-                                    <span className="ml-2 text-gray-700">
-                                        I agree to the{" "}
-                                        <a href="#" className="text-indigo-600 hover:underline">
-                                            terms and conditions
-                                        </a>
-                                    </span>
-                                </label>
-                            </div> */}
+                           
 
                             <div className="flex gap-4 pt-4">
                                 <SubmitButton title={'Submit Advert'} className="bg-gradient-to-r from-indigo-500 to-violet-600 hover:from-indigo-600 hover:to-violet-700 text-white font-bold py-2 px-6 rounded-lg shadow-md transition-all duration-200" />
